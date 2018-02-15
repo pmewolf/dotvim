@@ -1,7 +1,5 @@
 if has("win16") || has("win32")
-    behave mswin
     let $dotvim="$VIM/../../Data/settings/dotvim"
-    "let $dotvim="~/dotvim"
 else
     let $dotvim="~/dotvim"
 endif

@@ -44,9 +44,8 @@ endif
 " ---------------------------
 " 1.1 Overwrite _vimrc
 " ---------------------------
-"behave xterm
+behave xterm
 "behave mswin
-
 
 " ---------------------------
 " 1.2 Overwrite basic.vim
