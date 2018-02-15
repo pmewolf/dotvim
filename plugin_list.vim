@@ -42,7 +42,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/mru.vim'
 Plugin 'plasticboy/vim-markdown'
 """
-Plugin 'shemerey/vim-peepopen'
+"Plugin 'shemerey/vim-peepopen'
+Plugin 'pmewolf/PeepOpen-EditorSupport', {'rtp': 'vim-peepopen/'}
 Plugin 'twerth/ir_black'
 Plugin 'vim-scripts/peaksea'
 
