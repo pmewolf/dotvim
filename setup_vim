@@ -1,4 +1,4 @@
-#git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
-mv ../.vimrc ./bu -f
-cp .vimrc ../ -f
+git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
+mv -f ../.vimrc ./bu
+cp -f .vimrc ../
 vim +PluginInstall +qall
