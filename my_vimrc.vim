@@ -1,6 +1,6 @@
 " ---------------------------------------------------------
 "   my_vimrc.vim
-"       https://github.com/pmewolf/my_vimrc
+"       https://github.com/pmewolf/dotvim
 
 "   content
 "       1.  Overwrite
@@ -388,28 +388,6 @@ map gx :call HandleURL()<cr><cr>
 inoremap $B begin<esc>oend<esc>O
 
 " Syntax
-"if has("win16") || has("win32")
-"    augroup syntax
-"    au BufNewFile,BufReadPost *.v*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim 
-"    au BufNewFile,BufReadPost *.sv*     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-"    au BufNewFile,BufReadPost *.h*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-"    au BufNewFile,BufReadPost *.log     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-"    augroup END
-"    nmap sv :so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim<CR>
-"else
-    augroup syntax
-    au BufNewFile,BufReadPost *.v*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim 
-    au BufNewFile,BufReadPost *.sv*     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
-    au BufNewFile,BufReadPost *.h*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
-    au BufNewFile,BufReadPost *.log     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
-    augroup END
-    nmap sv :so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim<CR>
-"endif
-
-augroup syntax
-"au BufNewFile,BufReadPost *.sv* so $VIMRUNTIME/../../../Data/settings/vimfiles/syntax/systemverilog.vim
-au BufNewFile,BufReadPost *.sv* so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
-augroup END
 
 
 " _ Python _ 
@@ -421,10 +399,10 @@ au BufNewFile,BufRead *.py,*.pyw setf python
 "au FileType python nmap <F5> :! ..\Python3251\App\python.exe %<CR>
 "au FileType python nmap <F5> :! ..\..\..\PortableApps\Python3251\App\python.exe %<CR>
 if $VIM == 'C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\gVimPortable\App\vim'
-"au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python2761\App\python.exe %
-au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python3251\App\python.exe %
+    "au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python2761\App\python.exe %
+    au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python3251\App\python.exe %
 else 
-au FileType python nmap <F5> :! python3.3 %<CR>
+    au FileType python nmap <F5> :! python3.3 %<CR>
 endif
 
 
@@ -449,209 +427,7 @@ set csto=0
 "nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 
-" ---------------------------
-" 3.  Plugins Setting 
-" ---------------------------
 
-" _ Calendar _
-"
-" let g:calendar_frame = 'default'
-" let g:calendar_google_calendar = 1
-" let g:calendar_google_task = 1
-
-
-
-" _ ConqueTerm _
-"
-let g:ConqueTerm_PyExe = '..\Python3251\App\python.exe'
-
-" _ indentLine _
-" Vim
-let g:indentLine_color_term = 239
-
-" GVim
-"let g:indentLine_color_gui = '#A4E57E'
-
-" none X terminal
-let g:indentLine_color_tty_light = 7 " (default: 4)
-let g:indentLine_color_dark = 1 " (default: 2)
-
-" Background (Vim, GVim)
-let g:indentLine_bgcolor_term = 202
-let g:indentLine_bgcolor_gui = '#FF5F00'
-if has("gui_running") 
-else
-    let g:indentLine_char = '|'
-endif
-
-
-" _ Match_it _
-"
-if exists('loaded_matchit')
-let b:match_ignorecase=0
-let b:match_words=
-  \ '\<begin\>:\<end\>,' .
-  \ '\<if\>:\<else\>,' .
-  \ '\<module\>:\<endmodule\>,' .
-  \ '\<class\>:\<endclass\>,' .
-  \ '\<program\>:\<endprogram\>,' .
-  \ '\<clocking\>:\<endclocking\>,' .
-  \ '\<property\>:\<endproperty\>,' .
-  \ '\<sequence\>:\<endsequence\>,' .
-  \ '\<package\>:\<endpackage\>,' .
-  \ '\<covergroup\>:\<endgroup\>,' .
-  \ '\<primitive\>:\<endprimitive\>,' .
-  \ '\<specify\>:\<endspecify\>,' .
-  \ '\<generate\>:\<endgenerate\>,' .
-  \ '\<interface\>:\<endinterface\>,' .
-  \ '\<function\>:\<endfunction\>,' .
-  \ '\<task\>:\<endtask\>,' .
-  \ '\<case\>\|\<casex\>\|\<casez\>:\<endcase\>,' .
-  \ '\<fork\>:\<join\>\|\<join_any\>\|\<join_none\>,' .
-  \ '`ifdef\>:`else\>:`endif\>,'
-endif
-
-" _ Pydiction _
-let g:pydiction_location = '$VIMRUNTIME/../../../Data/settings/vimfiles/sources_self/Pydiction/complete-dict' 
-"let g:pydiction_menu_height = 8
-
-
-
-" _ Syntastic _
-let g:syntasic_check_on_open = 1
-
-" _ Tagbar _
-" Open and close the tagbar separately
-nmap <F5> :TagbarToggle<CR>
-"nmap <F4> :SrcExplToggle<CR>
-
-
-" _ Trinity _
-" Open and close all the three plugins on the same time
-nmap <F8>  :TrinityToggleAll<CR>
-" Open and close the Taglist separately
-nmap <F9> :TrinityToggleTagList<CR>
-" Open and close the NERD Tree separately
-nmap <F10> :TrinityToggleNERDTree<CR>
-" Open and close the Source Explorer separately
-"nmap <F11>  :TrinityToggleSourceExplorer<CR>
-
-
-" _ VimWiki _
-"
-" let g:vimwiki_folding = 1
-" let g:vimwiki_fold_lists = 'expr'
-let g:vimwiki_folding = 'expr' 
-" template from https://github.com/xiongjia/recycle.bin
-"
-let g:vimwiki_list = [
-                    \ {'path':'~/vimwiki/_content/',
-                    \  'path_html':'~/vimwiki/output', 
-                    \  'template_path': '~/vimwiki/_config/', 
-                    \  'template_default': 'vimwiki', 
-                    \  'template_ext': '.tpl', 
-                    \  'nested_syntaxes':{
-                    \       'c': 'c',
-                    \       'cpp': 'cpp',
-                    \       'java': 'java',
-                    \       'python': 'python',
-                    \       'systemverilog': 'systemverilog',
-                    \  },
-                    \  'auto_export':0
-                    \},
-                    \{ 'path':'~/vimwiki/_content_ex/',
-                    \  'path_html':'~/vimwiki/output_ex', 
-                    \  'template_path': '~/vimwiki/_config/', 
-                    \  'template_default': 'vimwiki', 
-                    \  'template_ext': '.tpl', 
-                    \  'auto_export':0
-                    \}] 
-inoremap $T %title   <esc>mAi<cr>%toc<esc>`A
-
-
-" _ WinManager _
-"
-let g:NERDTree_title="[NERDTree]"
-"let g:winManagerWindowLayout = "BufExplorer,FileExplorer|TagList"
-"let g:winManagerWindowLayout = "TagList|FileExplorer,BufExplorer"
-"let g:winManagerWindowLayout = "NERDTree|TagList"
-"let g:winManagerWindowLayout = "NERDTree|BufExplorer"
-let g:winManagerWindowLayout='NERDTree|TagList,BufExplorer' " ctrl+n to switch from taglist to bufexplorer
-
-let g:winManagerWidth = 30
-"let g:winManagerAutoOpen = 1
-
-function! NERDTree_Start()  
-    exec 'NERDTree'  
-endfunction  
-function! NERDTree_IsValid()  
-    return 1  
-endfunction  
-"nmap <silent> <F8> :WMToggle<cr>
-nmap wm :WMToggle<CR>  
-
-
-" ---------------------------
-" 4.  Plugins Usage
-" ---------------------------
-
-" ---------------------------
-" 4.1 sources_forked
-" ---------------------------
-
-" _ MRU(Most Recent Used) _
-" ========================
-" <leader>f 
-
-
-" ---------------------------
-" 4.2 sources_non_forked
-" ---------------------------
-
-
-
-" ---------------------------
-" 4.3 sources_self
-" ---------------------------
-
-
-" _ Ctags and taglist _
-" ========================
-" Ctrl + ]      : enter funcition body
-" Ctrl + t      : go back to where u leave
-
-" _ Calendar _
-" ========================
-" :Calendar 
-" :Calendar 2015 1 8
-" :Calendar -view=year
-" :Calendar -view=year -split=vertical -width=27
-" :Calendar -view=year -split=horizontal -position=below -height=12
-" :Calendar -first_day=monday
-" :Calendar -view=clock
-
-
-
-" _ Pydiction _
-" ========================
-" <Space>       : Accept current match and insert a space.
-" <C-Y>         : Accept current match and and don't insert a space.
-" <Enter>       : Accept current match and insert a newline.
-" <ESC>or<C-E>  : Close the menu and do not accept any match.
-" :help popupmenu-keys
-
-" _ Shell _
-" ========================
-" <F11>         : to Fullscreen
-
-
-" _ VimWiki _
-" ========================
-" <leader>wt    : to open wiki
-
-" _ WinManager _
-" ========================
-" wm            : to use it
 
 
 " ---------------------------
