@@ -228,7 +228,7 @@ if has("mac") || has("macunix")
 elseif has("win16") || has("win32")
     set gfn=Consolas:h12:cANSI
     "set gfn=Courier:h14:cANSI
-elseif has("linux")
+elseif has("linux") || has("unix")
     set gfn=Monospace\ 12
     "set gfn=inconsolata\ 12
     "set gfn=DejaVu\ Sans\ Mono\ 12
