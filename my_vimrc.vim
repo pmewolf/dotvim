@@ -225,11 +225,18 @@ set list
 " Set font according to system
 if has("mac") || has("macunix")
     set gfn=Menlo:h15
+    "set gfn=IBM\ Plex\ Mono:h14,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
 elseif has("win16") || has("win32")
     set gfn=Consolas:h12:cANSI
     "set gfn=Courier:h14:cANSI
-elseif has("linux") || has("unix")
+    "set gfn=IBM\ Plex\ Mono:h14,Source\ Code\ Pro:h12,Bitstream\ Vera\ Sans\ Mono:h11
+elseif has("gui_gtk2")
+    set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+elseif has("linux")
+    set gfn=IBM\ Plex\ Mono:h14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
     set gfn=Monospace\ 12
+elseif has("unix")
+    set gfn=Monospace\ 11
     "set gfn=inconsolata\ 12
     "set gfn=DejaVu\ Sans\ Mono\ 12
 endif
@@ -401,7 +408,7 @@ inoremap $B begin<esc>oend<esc>O
 
 augroup syntax
 "au BufNewFile,BufReadPost *.sv* so $VIMRUNTIME/../../../Data/settings/vimfiles/syntax/systemverilog.vim
-au BufNewFile,BufReadPost *.sv* so $dotvim/bundle/verilog_systemverilog.vim/syntax/systemverilog.vim
+au BufNewFile,BufReadPost *.sv* so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
 augroup END
 
 
