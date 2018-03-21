@@ -244,8 +244,26 @@ Plugin 'vim-scripts/taglist.vim'
     " Purpose:
     "   ctags with taglist
     " Usage: 
+    "   ${trace_files_dir}> ctags -R
+    "   -------------------------------
     "   Ctrl + ]      : enter funcition body
     "   Ctrl + t      : go back to where u leave
+    set tags=./tags,./TAGS,tags;~,TAGS;~
+    "nmap <F8> :TlistToggle<CR><CR>     "將F8設為開啟taglist的快捷鍵
+    let Tlist_Show_One_File=1           "只顯示當下瀏覽檔案的func，不顯示之前瀏覽的檔案
+    let Tlist_Exit_OnlyWindow=1         "如果taglist區塊是最後一個，則退出vim
+    set ut=100                          "更新速度設成100ms
+
+Plugin 'wesleyche/SrcExpl'
+    " Purpose:
+    " Usage: 
+    " Config:
+    "nmap <F10> :SrcExplToggle<CR>
+    let g:SrcExpl_pluginList = [ 
+        \ "__Tag_List__", 
+        \ "_NERD_tree_", 
+        \ "Source_Explorer" 
+    \ ] 
 
 Plugin 'vim-scripts/Trinity'
     " Purpose:
@@ -259,6 +277,49 @@ Plugin 'vim-scripts/Trinity'
     nmap <F10> :TrinityToggleNERDTree<CR>
     " Open and close the Source Explorer separately
     "nmap <F11>  :TrinityToggleSourceExplorer<CR>
+
+Plugin 'wolfpython/cscope_map.vim'
+    " Purpose:
+    "   ~/dotvim/bundle/cscope_map.vim/plugin/cscope_maps.vim
+    " Usage: 
+    "   ${trace_files_dir}> cscope -Rbqk
+    "
+    "   :cs find s {name} : 找出C語言name的符號
+    "   :cs find g {name} : 找出name定義的地方
+    "   :cs find c {name} : 找出使用name的地方
+    "   :cs find t {name} : 找出name的字串
+    "   :cs find e {name} : 相當於egrep功能，但速度更佳
+    "   :cs find f {name} : 尋找檔案
+    "   :cs find i {name} : 尋找include此檔案的檔案
+    "   :cs find d {name} : 尋找name裡面使用到的函式
+    "   <CTRL-\>s  # symbol:    find all references to the token under cursor
+    "   <CTRL-\>g  # global:    find global definition(s) of the token under cursor
+    "   <CTRL-\>c  # calls:     find all calls to the function name under cursor
+    "   <CTRL-\>t  # text:      find all instances of the text under cursor
+    "   <CTRL-\>e  # egrep:     egrep search for the word under cursor
+    "   <CTRL-\>f  # file:      open the filename under cursor
+    "   <CTRL-\>i  # includes:  find files that include the filename under cursor
+    "   <CRTL-\>d  # called:    find functions that function under cursor calls    
+    " Config:
+    nmap zs :cs find s 
+    nmap zg :cs find g 
+    nmap zc :cs find c 
+    nmap zt :cs find t 
+    nmap ze :cs find e 
+    nmap zf :cs find f 
+    nmap zi :cs find i 
+    nmap zd :cs find d 
+
+
+Plugin 'corntrace/bufexplorer'
+    " Purpose:
+    " Usage: 
+    " Config:
+    let g:bufExplorerDefaultHelp=0
+    let g:bufExplorerShowRelativePath=1
+    let g:bufExplorerFindActive=1
+    let g:bufExplorerSortBy='name'
+    map <leader>o :BufExplorer<cr>
 
 Plugin 'vim-scripts/winmanager'
     " Purpose:
@@ -284,24 +345,10 @@ Plugin 'vim-scripts/winmanager'
     "nmap <silent> <F8> :WMToggle<cr>
     nmap wm :WMToggle<CR>  
 
-Plugin 'corntrace/bufexplorer'
-    " Purpose:
-    " Usage: 
-    " Config:
-    let g:bufExplorerDefaultHelp=0
-    let g:bufExplorerShowRelativePath=1
-    let g:bufExplorerFindActive=1
-    let g:bufExplorerSortBy='name'
-    map <leader>o :BufExplorer<cr>
-
-Plugin 'wesleyche/SrcExpl'
-
-Plugin 'wolfpython/cscope_map.vim'
 
 " -------------------------------------
 " Programming Assist
 " -------------------------------------
-
 
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'jiangmiao/auto-pairs'
