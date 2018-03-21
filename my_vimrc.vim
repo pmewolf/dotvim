@@ -29,10 +29,12 @@
 " ---------------------------------------------------------
 
 "
-if has("win16") || has("win32")
+if has("win16") || has("win32") || has("win64")
     behave mswin
-    let $dotvim="$VIM/../../Data/settings/dotvim"
+    "let $dotvim="$VIM/../../Data/settings/dotvim"
+    let $dotvim="C:/Users/xuhu-local/dotvim"
 else
+    behave xterm
     let $dotvim="~/dotvim"
 endif
 
@@ -44,8 +46,6 @@ endif
 " ---------------------------
 " 1.1 Overwrite _vimrc
 " ---------------------------
-behave xterm
-"behave mswin
 
 " ---------------------------
 " 1.2 Overwrite basic.vim
@@ -86,7 +86,7 @@ set nowrap
 
 " _ yankring _
 "
-if has("win16") || has("win32")
+if has("win16") || has("win32") || has("win64")
     " Don't do anything
     let g:yankring_history_dir = '$VIMRUNTIME/../../../Data/settings/vimfiles/temp_dirs'
 else
@@ -109,7 +109,6 @@ endif
 " ---------------------------
 " 2.  Self Setting
 " ---------------------------
-"set isfname-=:
 "set isfname-=:
 
 " ---------------------------
