@@ -1,5 +1,6 @@
-if has("win16") || has("win32")
-    let $dotvim="$VIM/../../Data/settings/dotvim"
+if has("win16") || has("win32") || has("win64")
+    "let $dotvim="$VIM/../../Data/settings/dotvim"
+    let $dotvim="C:/Users/xuhu-local/dotvim"
 else
     let $dotvim="~/dotvim"
 endif
