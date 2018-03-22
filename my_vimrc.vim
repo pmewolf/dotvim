@@ -48,9 +48,9 @@
 " ---------------------------
 if has("win16") || has("win32")
     behave mswin
-    let $dotvim="$VIM/../../Data/settings/dotvim"
+    "let $dotvim="$VIM/../../Data/settings/dotvim"
 else
-    let $dotvim="~/dotvim"
+    "let $dotvim="~/dotvim"
 endif
 
 behave xterm
