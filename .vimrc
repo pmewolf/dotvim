@@ -41,10 +41,10 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Amix's setting
 "set runtimepath+=~/.vim_runtime
-source $dotvim/vimrcs/basic.vim
-source $dotvim/vimrcs/filetypes.vim
-source $dotvim/vimrcs/plugins_config.vim
-source $dotvim/vimrcs/extended.vim
+"source $dotvim/vimrcs/basic.vim
+"source $dotvim/vimrcs/filetypes.vim
+"source $dotvim/vimrcs/plugins_config.vim
+"source $dotvim/vimrcs/extended.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " My setting
