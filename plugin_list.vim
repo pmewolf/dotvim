@@ -11,6 +11,29 @@ Plugin 'maxbrunsfeld/vim-yankstack'
     nmap <c-p> <Plug>yankstack_substitute_older_paste
     nmap <c-n> <Plug>yankstack_substitute_newer_paste
 
+Plugin 'vim-scripts/YankRing.vim'
+    " Purpose:
+    " Usage: 
+    " Config:
+    if has("win16") || has("win32")
+        " Don't do anything
+        let g:yankring_history_dir = '$VIMRUNTIME/../../../Data/settings/vimfiles/temp_dirs'
+    else
+        let g:yankring_history_dir = '~/dotvim/temp_dirs'
+    endif
+
+
+"Plugin 'tpope/vim-pathogen'
+"    " Purpose:
+"    " Usage: 
+"    " Config:
+"    let s:vim_runtime = expand('<sfile>:p:h')."/.."
+"    call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
+"    call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
+"    call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
+"    call pathogen#helptags()
+
+
 Plugin 'mileszs/ack.vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -301,6 +324,24 @@ Plugin 'wolfpython/cscope_map.vim'
     "   <CTRL-\>i  # includes:  find files that include the filename under cursor
     "   <CRTL-\>d  # called:    find functions that function under cursor calls    
     " Config:
+    set cscopetag
+    set csto=0
+    
+    "if filereadable("cscope.out")
+    "   cs add cscope.out   
+    "elseif $CSCOPE_DB != ""
+    "    cs add $CSCOPE_DB
+    "endif
+    "set cscopeverbose
+    "
+    "nmap zs :cs find s <C-R>=expand("<cword>")<CR><CR>
+    "nmap zg :cs find g <C-R>=expand("<cword>")<CR><CR>
+    "nmap zc :cs find c <C-R>=expand("<cword>")<CR><CR>
+    "nmap zt :cs find t <C-R>=expand("<cword>")<CR><CR>
+    "nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
+    "nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    "nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    "nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
     nmap zs :cs find s 
     nmap zg :cs find g 
     nmap zc :cs find c 
