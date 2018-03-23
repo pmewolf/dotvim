@@ -164,9 +164,11 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme peaksea
+    "colorscheme peaksea
     "colorscheme ir_black
     "colorscheme desert
+    "colorscheme solarized
+    colorscheme gruvbox
 catch
 endtry
 
@@ -303,7 +305,7 @@ set laststatus=2
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l,%v,%p%%
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l,%v,%p%%
 
 " ---------------------------
 "   S1i Editing mappings 
@@ -920,17 +922,46 @@ endif
 " ---------------------------
 "   S5d Other
 " ---------------------------
+
+map gx :call HandleURL()<cr><cr>
+nmap <leader>g :call Google()<CR>
+
 function! HandleURL()
+    " open url under cursor
+    if has("win16") || has("win32") || has("win64")
+        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
+        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    else
+        let browser = "firfox"
+    endif
     let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
     echo s:uri
     if s:uri != ""
-        silent exec "!firefox '".s:uri."'"
+        "silent exec "!firefox '".s:uri."'"
+        "silent exec "!".browser." '".s:uri."'"
+        exec 'silent !"' . browser . '" ' . s:uri
     else
         echo "No URI found in line."
     endif
 endfunction
-map gx :call HandleURL()<cr><cr>
 
+
+fun! Google()
+    " google keyword under cursor
+    if has("win16") || has("win32") || has("win64")
+        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
+        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    else
+        let browser = "firfox"
+    endif
+    let keyword = expand("<cword>")
+    let url = "http://www.google.com/search?q=" . keyword
+    if has("win16") || has("win32") || has("win64")
+    else
+    endif
+    "exec 'silent !"' . path . 'firefox.exe" ' . url
+    exec 'silent !"' . browser . '" ' . url
+endfun
 
 
 
@@ -1015,7 +1046,7 @@ map gx :call HandleURL()<cr><cr>
 " q	        stop recording
 " @d	    execute your macro
 " @@	    execute your macro again
-" :reg d    show the contents of registers d 
+" :reg d    show the contents of registers d
 "
 " =editing=
 " Type :let @d=' (Note: Don't press <ENTER>)
