@@ -44,23 +44,23 @@ Plugin 'tpope/vim-fugitive'
     "   https://www.vim.org/scripts/script.php?script_id=2975
     "   #utility #git
     " Usage:
-    "   :Gdiff      to bring up the staged version of the file side by side with the working tree version and 
-    "               use Vim's diff handling capabilities to stage a subset of the file's changes. 
+    "   :Gdiff      to bring up the staged version of the file side by side with the working tree version and
+    "               use Vim's diff handling capabilities to stage a subset of the file's changes.
     "   :Gstatus    Press `-` to add/reset a file's changes, or `p` to add/reset --patch
-    "   :Gblame     brings up an interactive vertical split with git-blame output. 
-    "               Press enter on a line to reblame the file as it stood in that commit, or`o` to open that commit in a split. 
-    "   :Gmove      does a git-mv on a file and simultaneously renames the buffer. 
+    "   :Gblame     brings up an interactive vertical split with git-blame output.
+    "               Press enter on a line to reblame the file as it stood in that commit, or`o` to open that commit in a split.
+    "   :Gmove      does a git-mv on a file and simultaneously renames the buffer.
     "   :Gremove    does a git-rm on a file and simultaneously deletes the buffer.
-    "   :Ggrep      to search the work tree (or any arbitrary commit) with git-grep, skipping over that which is not tracked in the repository. 
+    "   :Ggrep      to search the work tree (or any arbitrary commit) with git-grep, skipping over that which is not tracked in the repository.
     "   :Glog       loads all previous revisions of a file into the quickfix list so you can iterate over them and watch the file evolve!
-    "   :Gread      is a variant of `git checkout -- filename` that operates on the buffer rather than the filename.  
-    "               This means you can use `u` to undo it and you never get any warnings about the file changing outside Vim. 
-    "   :Gwrite     writes to both the work tree and index versions of a file, 
+    "   :Gread      is a variant of `git checkout -- filename` that operates on the buffer rather than the filename.
+    "               This means you can use `u` to undo it and you never get any warnings about the file changing outside Vim.
+    "   :Gwrite     writes to both the work tree and index versions of a file,
     "               making it like git-add when called from a work tree file and like git-checkout when called from the index or a blob in history.
-    "   :Git        for running any arbitrary command. 
+    "   :Git        for running any arbitrary command.
     "
     " Config:
-    "   Add %{fugitive#statusline()} to 'statusline' to get an indicator with the current branch in (surprise!) your statusline. 
+    "   Add %{fugitive#statusline()} to 'statusline' to get an indicator with the current branch in (surprise!) your statusline.
 
 Plugin 'ctrlpvim/ctrlp.vim'
     " Purpose:
@@ -68,7 +68,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
     "   Fuzzy file, buffer, mru, tag, etc finder.
     "   http://ctrlpvim.github.io/ctrlp.vim/
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     let g:ctrlp_working_path_mode = 0
     
@@ -82,11 +82,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'michaeljsmith/vim-indent-object'
     " Purpose:
-    "   Vim plugin that defines a new text object representing lines of code at 
+    "   Vim plugin that defines a new text object representing lines of code at
     "   the same indent level. Useful for python/vim scripts, etc.
     "   https://www.vim.org/scripts/script.php?script_id=3037
     "   #utility #python
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'tpope/vim-surround'
@@ -94,14 +94,14 @@ Plugin 'tpope/vim-surround'
     "   surround.vim: quoting/parenthesizing made simple
     "   https://www.vim.org/scripts/script.php?script_id=1697
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     vmap Si S(i_<esc>f)
     au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 Plugin 'terryma/vim-expand-region'
     " Purpose:
-    "   Vim plugin that allows you to visually select increasingly larger 
+    "   Vim plugin that allows you to visually select increasingly larger
     "   regions of text using the same key combination
     " Usage:
     "   Press + to expand the visual selection and _ to shrink it.
@@ -113,14 +113,14 @@ Plugin 'terryma/vim-multiple-cursors'
     " Purpose:
     "   True Sublime Text style multiple selections for Vim
     "   https://github.com/terryma/vim-multiple-cursors
-    " Usage: 
+    " Usage:
     " Config:
     let g:multi_cursor_next_key="\<C-s>"
 
 Plugin 'junegunn/goyo.vim'
     " Purpose:
     "   Distraction-free writing in Vim
-    " Usage: 
+    " Usage:
     " Config:
     let g:goyo_width=100
     let g:goyo_margin_top = 2
@@ -131,7 +131,7 @@ Plugin 'amix/vim-zenroom2'
     " Purpose:
     "   A Vim extension that emulates iA Writer environment when editing Markdown, reStructuredText or text files
     "   It requires goyo.vim and it works by setting global Goyo callbacks that triggers special setup for Markdown, reStructuredText and text files.
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'tpope/vim-repeat'
@@ -139,21 +139,21 @@ Plugin 'tpope/vim-repeat'
     "   repeat.vim: enable repeating supported plugin maps with "."
     "   https://www.vim.org/scripts/script.php?script_id=2136
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
 Plugin 'tpope/vim-commentary'
     " Purpose:
     "   commentary.vim: comment stuff out
     "   https://www.vim.org/scripts/script.php?script_id=3695
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     
 Plugin 'airblade/vim-gitgutter'
     " Purpose:
     "   A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
     "   https://github.com/airblade/vim-gitgutter
-    " Usage: 
+    " Usage:
     " Config:
     let g:gitgutter_enabled=0
     nnoremap <silent> <leader>d :GitGutterToggle<cr>
@@ -162,9 +162,9 @@ Plugin 'itchyny/lightline.vim'
     " Purpose:
     "   A light and configurable statusline/tabline plugin for Vim
     "   https://www.vim.org/scripts/script.php?script_id=5294
-    "   https://github.com/itchyny/lightline.vim 
+    "   https://github.com/itchyny/lightline.vim
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     "let g:lightline = {
     "      \ 'colorscheme': 'wombat',
@@ -194,7 +194,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'vim-scripts/mru.vim'
     " Purpose:
     "   Plugin to manage Most Recently Used (MRU) files
-    " Usage: 
+    " Usage:
     "   <leader> f
     " Config:
     let MRU_Max_Entries = 400
@@ -203,13 +203,13 @@ Plugin 'vim-scripts/mru.vim'
 """
 "Plugin 'shemerey/vim-peepopen'
 "    " Purpose:
-"    "   A plugin for the Vim text editor. PeepOpen provides fuzzy search of 
+"    "   A plugin for the Vim text editor. PeepOpen provides fuzzy search of
 "    "   filenames and paths in a programming project.
-"    " Usage: 
+"    " Usage:
 "    " Config:
 Plugin 'pmewolf/PeepOpen-EditorSupport', {'rtp': 'vim-peepopen/'}
     " Purpose:
-    " Usage: 
+    " Usage:
     " Config:
 
 " My plugin
@@ -220,21 +220,21 @@ Plugin 'tpope/vim-abolish'
     "   https://www.vim.org/scripts/script.php?script_id=1545
     "   https://github.com/tpope/vim-abolish
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'vim-scripts/Conque-Shell'
     " Purpose:
-    "   Run interactive commands inside a Vim buffer 
+    "   Run interactive commands inside a Vim buffer
     "   https://www.vim.org/scripts/script.php?script_id=2771
-    " Usage: 
+    " Usage:
     " Config:
     let g:ConqueTerm_PyExe = '..\Python3251\App\python.exe'
 
 Plugin 'Yggdroot/indentLine'
     " Purpose:
     "   A vim plugin to display the indention levels with thin vertical lines
-    " Usage: 
+    " Usage:
     " Config:
     " Vim
     let g:indentLine_color_term = 239
@@ -248,7 +248,7 @@ Plugin 'Yggdroot/indentLine'
     " Background (Vim, GVim)
     let g:indentLine_bgcolor_term = 202
     let g:indentLine_bgcolor_gui = '#FF5F00'
-    if !has("gui_running") 
+    if !has("gui_running")
         let g:indentLine_char = '|'
     endif
 
@@ -289,7 +289,7 @@ Plugin 'xolox/vim-misc'
     "   http://peterodding.com/code/vim/misc/
     "   https://github.com/xolox/vim-misc
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'tpope/vim-dispatch'
@@ -299,21 +299,21 @@ Plugin 'tpope/vim-dispatch'
     "   https://vimeo.com/63116209
     "   https://github.com/tpope/vim-dispatch
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'powerline/powerline'
     " Purpose:
-    "   Powerline is a statusline plugin for vim, and provides statuslines and 
-    "   prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile. 
+    "   Powerline is a statusline plugin for vim, and provides statuslines and
+    "   prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.
     "   https://powerline.readthedocs.io/en/latest/
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'vim-airline/vim-airline'
     " Purpose:
     "   lean & mean status/tabline for vim that's light as air
-    " Usage: 
+    " Usage:
     " Config:
     " set status line
     set laststatus=2
@@ -339,13 +339,13 @@ Plugin 'othree/xml.vim'
     "   helps editing xml (and [x]html, sgml, xslt) files
     "   https://www.vim.org/scripts/script.php?script_id=1397
     "   #ftplugin #xml
-    " Usage: 
+    " Usage:
     " Config:
 
 "vundle install error
 "Plugin 'othree/vim-slumlord'
 "    " Purpose:
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 " -------------------------------------
@@ -355,7 +355,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
     " Purpose:
     "   A lightweight implementation of emacs's kill-ring for vim
     "   https://github.com/maxbrunsfeld/vim-yankstack
-    " Usage: 
+    " Usage:
     " Config:
     let g:yankstack_yank_keys = ['y', 'd']
     
@@ -367,7 +367,7 @@ Plugin 'vim-scripts/YankRing.vim'
     "   Maintains a history of previous yanks, changes and deletes
     "   https://www.vim.org/scripts/script.php?script_id=1234
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     if has("win16") || has("win32") || has("win64")
         " Don't do anything
@@ -379,9 +379,9 @@ Plugin 'vim-scripts/YankRing.vim'
 " Now replace with Vundle
 "Plugin 'tpope/vim-pathogen'
 "    " Purpose:
-"    "   pathogen.vim: manage your runtimepath 
+"    "   pathogen.vim: manage your runtimepath
 "    "   https://www.vim.org/scripts/script.php?script_id=2332
-"    " Usage: 
+"    " Usage:
 "    " Config:
 "    let s:vim_runtime = expand('<sfile>:p:h')."/.."
 "    call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
@@ -389,6 +389,33 @@ Plugin 'vim-scripts/YankRing.vim'
 "    call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 "    call pathogen#helptags()
 
+
+Plugin 'vim-scripts/open-browser.vim'
+    " Purpose:
+    "   Open URI with your favorite browser from your favorite editor
+    "   https://www.vim.org/scripts/script.php?script_id=3133
+    "   https://github.com/vim-scripts/open-browser.vim
+    " Usage:
+    "   " In command-line
+    "   :OpenBrowser http://google.com/
+    "   :OpenBrowserSearch ggrks
+    "   :OpenBrowserSmartSearch http://google.com/
+    "   :OpenBrowserSmartSearch ggrks
+    " Config:
+    let g:netrw_nogx = 1 " disable netrw's gx mapping.
+    
+    "" Open [selected] URI under cursor.
+    "nmap gx <Plug>(openbrowser-open)
+    "vmap gx <Plug>(openbrowser-open)
+    "
+    "" Search [selected] word under cursor.
+    "nmap gx <Plug>(openbrowser-search)
+    "vmap gx <Plug>(openbrowser-search)
+    
+    " If it looks like URI, Open [selected] URI under cursor. Otherwise, Search word under cursor.
+    nmap gx <Plug>(openbrowser-smart-search)
+    vmap gx <Plug>(openbrowser-smart-search)
+    
 " -------------------------------------
 " ColorScheme
 " -------------------------------------
@@ -404,12 +431,12 @@ Plugin 'vim-scripts/peaksea'
 
 Plugin 'vim-scripts/mayansmoke'
     " Purpose:
-    "   Pleasant and ergonomic light-background color scheme. 
+    "   Pleasant and ergonomic light-background color scheme.
     "   https://www.vim.org/scripts/script.php?script_id=3065
 
 Plugin 'altercation/vim-colors-solarized'
     " Purpose:
-    "   precision colorscheme for the vim text editor 
+    "   precision colorscheme for the vim text editor
     "   http://ethanschoonover.com/solarized
     
 Plugin 'therubymug/vim-pyte'
@@ -454,21 +481,21 @@ Plugin 'xolox/vim-shell'
     " Purpose:
     "   Improved integration between Vim and its environment (fullscreen, open URL, background command execution)
     "   http://peterodding.com/code/vim/shell/
-    " Usage: 
+    " Usage:
     "   <F11>           : to Fullscreen
     " Config:
 
 Plugin 'amix/open_file_under_cursor.vim'
     " Purpose:
     "   Open file under cursor when pressing gf (if the text under the cursor is a path)
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'scrooloose/nerdtree'
     " Purpose:
     "   A tree explorer plugin for vim.
     "   https://github.com/scrooloose/nerdtree
-    " Usage: 
+    " Usage:
     " Config:
     let g:NERDTreeWinPos = "right"
     let NERDTreeShowHidden=0
@@ -480,9 +507,9 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'majutsushi/tagbar'
     " Purpose:
-    "   Vim plugin that displays tags in a window, ordered by scope 
+    "   Vim plugin that displays tags in a window, ordered by scope
     "   http://majutsushi.github.io/tagbar/
-    " Usage: 
+    " Usage:
     " Config:
     " Open and close the tagbar separately
     nmap <F5> :TagbarToggle<CR>
@@ -490,9 +517,9 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'vim-scripts/taglist.vim'
     " Purpose:
-    "   Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc) 
+    "   Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
     "   https://www.vim.org/scripts/script.php?script_id=273
-    " Usage: 
+    " Usage:
     "   ${trace_files_dir}> ctags -R
     "   -------------------------------
     "   Ctrl + ]      : enter funcition body
@@ -507,18 +534,18 @@ Plugin 'wesleyche/SrcExpl'
     " Purpose:
     "   A (G)Vim plugin for exploring the source code based on "tags", and it works like the context window of "Source Insight".
     "   https://github.com/wesleyche/SrcExpl
-    " Usage: 
+    " Usage:
     " Config:
     "nmap <F10> :SrcExplToggle<CR>
-    let g:SrcExpl_pluginList = [ 
-        \ "__Tag_List__", 
-        \ "_NERD_tree_", 
-        \ "Source_Explorer" 
-    \ ] 
+    let g:SrcExpl_pluginList = [
+        \ "__Tag_List__",
+        \ "_NERD_tree_",
+        \ "Source_Explorer"
+    \ ]
 
 Plugin 'vim-scripts/Trinity'
     " Purpose:
-    " Usage: 
+    " Usage:
     " Config:
     " Open and close all the three plugins on the same time
     nmap <F8>  :TrinityToggleAll<CR>
@@ -534,7 +561,7 @@ Plugin 'wolfpython/cscope_map.vim'
     "   official cscope_map config
     "   https://github.com/wolfpython/cscope_map.vim
     "   ~/dotvim/bundle/cscope_map.vim/plugin/cscope_maps.vim
-    " Usage: 
+    " Usage:
     "   ${trace_files_dir}> cscope -Rbqk
     "
     "   :cs find s {name} : 找出C語言name的符號
@@ -587,7 +614,7 @@ Plugin 'jlanzarotta/bufexplorer'
     " Purpose:
     "   BufExplorer Plugin for Vim
     "   #utility
-    " Usage: 
+    " Usage:
     " Config:
     let g:bufExplorerDefaultHelp=0
     let g:bufExplorerShowRelativePath=1
@@ -597,7 +624,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'vim-scripts/winmanager'
     " Purpose:
-    "   A windows style IDE for Vim 6.0 
+    "   A windows style IDE for Vim 6.0
     "   https://www.vim.org/scripts/script.php?script_id=95
     "   #utility
     " Usage:
@@ -629,31 +656,31 @@ Plugin 'vim-scripts/winmanager'
 "Plugin 'chr4/nginx.vim'
 "    " Purpose:
 "    "   Improved nginx vim plugin (incl. syntax highlighting)
-"    "   nginx.vim highlights configuration files for nginx, 
+"    "   nginx.vim highlights configuration files for nginx,
 "    "   the high-performance web server (see http://nginx.net).
 "    "   #syntax #nginx
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 "Plugin 'sophacles/vim-bundle-mako'
 "    " Purpose:
-"    "   A collection of vim scripts for the mako templating engine, 
+"    "   A collection of vim scripts for the mako templating engine,
 "    "   in a vim bundle form (usable with pathogen.vim)
 "    "   About mako: http://www.makotemplates.org/
 "    "   #syntax #mako
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 "Plugin 'groenewege/vim-less'
 "    " Purpose:
 "    "   vim syntax for LESS (dynamic CSS)
-"    "   This vim bundle adds syntax highlighting, indenting and autocompletion 
+"    "   This vim bundle adds syntax highlighting, indenting and autocompletion
 "    "   for the dynamic stylesheet language LESS.
-"    "   This bundle is compatible with vim-css-color, vim-css3-syntax and 
-"    "   possibly other plugins that place code in after/syntax/css.vim or 
+"    "   This bundle is compatible with vim-css-color, vim-css3-syntax and
+"    "   possibly other plugins that place code in after/syntax/css.vim or
 "    "   after/syntax/css/*.vim.
 "    "   #syntax #less #css
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 "Plugin 'dpino/zencoding-vim'
@@ -661,7 +688,7 @@ Plugin 'vim-scripts/winmanager'
 "    "   zencoding-vim is vim script support for expanding abbreviation like zen-coding(emmet).
 "    "   Zen Coding — a new way of writing HTML and CSS code
 "    "   #syntax #html #css
-"    " Usage: 
+"    " Usage:
 "    " Config:
 "    " Enable all functions in all modes
 "    let g:user_zen_mode='a'
@@ -671,21 +698,21 @@ Plugin 'fatih/vim-go'
     "   Go development plugin for Vim https://patreon.com/fatih
     "   https://github.com/fatih/vim-go-tutorial
     "   #syntax #go
-    " Usage: 
+    " Usage:
     " Config:
     " some shortcuts to make it easier to jump between errors in quickfix list:
     "map <C-n> :cnext<CR>
     "map <C-m> :cprevious<CR>
-    "nnoremap <leader>a :cclose<CR>    
+    "nnoremap <leader>a :cclose<CR>
     " shortcuts to build and run a Go program with <leader>b and <leader>r:
     "autocmd FileType go nmap <leader>b  <Plug>(go-build)
-    "autocmd FileType go nmap <leader>r  <Plug>(go-run)    
+    "autocmd FileType go nmap <leader>r  <Plug>(go-run)
     let g:go_fmt_command = "goimports"
 
 Plugin 'digitaltoad/vim-pug'
     " Purpose:
     "   Vim Pug (formerly Jade) template engine syntax highlighting and indention
-    " Usage: 
+    " Usage:
     " Config:
 
 " -------------------------------------
@@ -697,10 +724,10 @@ Plugin 'digitaltoad/vim-pug'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
     " Purpose:
-    "   l9 is a Vim-script library, which provides some utility functions and 
+    "   l9 is a Vim-script library, which provides some utility functions and
     "   commands for programming in Vim.
     "   https://www.vim.org/scripts/script.php?script_id=3252
-    " Usage: 
+    " Usage:
     " Config:
 
 "Plugin 'vim-scripts/AutoComplPop'
@@ -708,34 +735,34 @@ Plugin 'othree/vim-autocomplpop'
     " Purpose:
     "   Automatic trigger complete popup menu
     "   https://github.com/othree/vim-autocomplpop
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
     " Purpose:
     "   vim: interpret a file by function and cache file automatically
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'tomtom/tlib_vim'
 "Plugin 'vim-scripts/tlib'
     " Purpose:
-    "   Some utility functions for VIM 
-    "   https://www.vim.org/scripts/script.php?script_id=1863 
-    " Usage: 
+    "   Some utility functions for VIM
+    "   https://www.vim.org/scripts/script.php?script_id=1863
+    " Usage:
     " Config:
 
 Plugin 'garbas/vim-snipmate'
     " Purpose:
     "   snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
     "   https://www.vim.org/scripts/script.php?script_id=2540
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'scrooloose/snipmate-snippets'
     " Purpose:
     "   A collection of snippets for snipmate
-    " Usage: 
+    " Usage:
     " Config:
     ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
     snor <c-j> <esc>i<right><c-r>=snipMate#TriggerSnippet()<cr>
@@ -744,13 +771,13 @@ Plugin 'honza/vim-snippets'
     " Purpose:
     "   vim-snipmate default snippets (Previously snipmate-snippets)
     "   https://github.com/honza/vim-snippets
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'jiangmiao/auto-pairs'
     " Purpose:
     "   Vim plugin, insert or delete brackets, parens, quotes in pair
-    " Usage: 
+    " Usage:
     " Config:
 
 "Plugin 'scrooloose/syntastic'
@@ -758,7 +785,7 @@ Plugin 'vim-syntastic/syntastic'
     " Purpose:
     "   Syntax checking hacks for vim
     "   https://github.com/vim-syntastic/syntastic
-    " Usage: 
+    " Usage:
     " Config:
     " Python
     let g:syntastic_python_checkers=['pyflakes']
@@ -784,11 +811,11 @@ Plugin 'vhda/verilog_systemverilog.vim'
     " Purpose:
     "   Verilog/SystemVerilog Syntax and Omni-completion
     "   https://github.com/vhda/verilog_systemverilog.vim
-    " Usage: 
+    " Usage:
     " Config:
     "if has("win16") || has("win32")
     "    augroup syntax
-    "    au BufNewFile,BufReadPost *.v*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim 
+    "    au BufNewFile,BufReadPost *.v*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
     "    au BufNewFile,BufReadPost *.sv*     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
     "    au BufNewFile,BufReadPost *.h*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
     "    au BufNewFile,BufReadPost *.log     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
@@ -796,7 +823,7 @@ Plugin 'vhda/verilog_systemverilog.vim'
     "    nmap sv :so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim<CR>
     "else
         augroup syntax
-        au BufNewFile,BufReadPost *.v*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim 
+        au BufNewFile,BufReadPost *.v*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.sv*     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.h*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.log     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
@@ -812,17 +839,17 @@ Plugin 'vhda/verilog_systemverilog.vim'
     
 Plugin 'plasticboy/vim-markdown'
     " Purpose:
-    "   Markdown Vim Mode 
+    "   Markdown Vim Mode
     "   http://plasticboy.com/markdown-vim-mode/
     "   https://github.com/plasticboy/vim-markdown/
-    " Usage: 
+    " Usage:
     " Config:
 
 "Plugin 'tpope/vim-markdown'
 "    " Purpose:
 "    "   Vim Markdown runtime files
 "    "   https://github.com/tpope/vim-markdown
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 Plugin 'hdima/python-syntax'
@@ -831,7 +858,7 @@ Plugin 'hdima/python-syntax'
     "   https://www.vim.org/scripts/script.php?script_id=790
     "   https://github.com/hdima/python-syntax
     "   #syntax #vim
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'nvie/vim-flake8'
@@ -839,7 +866,7 @@ Plugin 'nvie/vim-flake8'
     "   Flake8 plugin for Vim
     "   https://github.com/nvie/vim-flake8
     "   #utility #python #flake8
-    " Usage: 
+    " Usage:
     " Config:
 
 Plugin 'vim-scripts/Pydiction'
@@ -848,14 +875,14 @@ Plugin 'vim-scripts/Pydiction'
     "   https://www.vim.org/scripts/script.php?script_id=850
     "   https://github.com/vim-scripts/Pydiction
     "   #utility #python
-    " Usage: 
+    " Usage:
     "   <Space>         : Accept current match and insert a space.
     "   <C-Y>           : Accept current match and and don't insert a space.
     "   <Enter>         : Accept current match and insert a newline.
     "   <ESC>or<C-E>    : Close the menu and do not accept any match.
     "   :help popupmenu-keys
     " Config:
-    let g:pydiction_location = '$VIMRUNTIME/../../../Data/settings/vimfiles/sources_self/Pydiction/complete-dict' 
+    let g:pydiction_location = '$VIMRUNTIME/../../../Data/settings/vimfiles/sources_self/Pydiction/complete-dict'
     "let g:pydiction_menu_height = 8
 
 Plugin 'artur-shaik/vim-javacomplete2'
@@ -863,21 +890,21 @@ Plugin 'artur-shaik/vim-javacomplete2'
     "   Updated javacomplete plugin for vim.
     "   https://github.com/artur-shaik/vim-javacomplete2
     "   #utility #java
-    " Usage: 
+    " Usage:
     " Config:
 
 "Plugin 'kchmck/vim-coffee-script'
 "    " Purpose:
 "    "   CoffeeScript support for vim
 "    "   https://github.com/kchmck/vim-coffee-script
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 "Plugin 'aklt/plantuml-syntax'
 "    " Purpose:
 "    "   vim syntax file for plantuml
 "    "   https://github.com/aklt/plantuml-syntax
-"    " Usage: 
+"    " Usage:
 "    " Config:
 
 
@@ -885,8 +912,10 @@ Plugin 'ntpeters/vim-better-whitespace'
     " Purpose:
     "   Better whitespace highlighting for Vim
     "   https://github.com/ntpeters/vim-better-whitespace
-    " Usage: 
+    " Usage:
     " Config:
+    "To ignore lines that contain only whitespace
+    let g:better_whitespace_skip_empty_lines=1
 
 
 
@@ -897,8 +926,8 @@ Plugin 'itchyny/calendar.vim'
     " Purpose:
     "   A calendar application for Vim
     "   https://github.com/itchyny/calendar.vim
-    " Usage: 
-    "   :Calendar 
+    " Usage:
+    "   :Calendar
     "   :Calendar 2015 1 8
     "   :Calendar -view=year
     "   :Calendar -view=year -split=vertical -width=27
@@ -912,23 +941,23 @@ Plugin 'itchyny/calendar.vim'
 
 Plugin 'vimwiki/vimwiki'
     " Purpose:
-    "   Personal Wiki for Vim 
+    "   Personal Wiki for Vim
     "   http://vimwiki.github.io/
     "   https://github.com/vimwiki/vimwiki
-    " Usage: 
+    " Usage:
     "   <leader>wt  : to open wiki
     " Config:
     " let g:vimwiki_folding = 1
     " let g:vimwiki_fold_lists = 'expr'
-    let g:vimwiki_folding = 'expr' 
+    let g:vimwiki_folding = 'expr'
     " template from https://github.com/xiongjia/recycle.bin
     "
     let g:vimwiki_list = [
                         \ {'path':'~/vimwiki/_content/',
-                        \  'path_html':'~/vimwiki/output', 
-                        \  'template_path': '~/vimwiki/_config/', 
-                        \  'template_default': 'vimwiki', 
-                        \  'template_ext': '.tpl', 
+                        \  'path_html':'~/vimwiki/output',
+                        \  'template_path': '~/vimwiki/_config/',
+                        \  'template_default': 'vimwiki',
+                        \  'template_ext': '.tpl',
                         \  'nested_syntaxes':{
                         \       'c': 'c',
                         \       'cpp': 'cpp',
@@ -939,11 +968,11 @@ Plugin 'vimwiki/vimwiki'
                         \  'auto_export':0
                         \},
                         \{ 'path':'~/vimwiki/_content_ex/',
-                        \  'path_html':'~/vimwiki/output_ex', 
-                        \  'template_path': '~/vimwiki/_config/', 
-                        \  'template_default': 'vimwiki', 
-                        \  'template_ext': '.tpl', 
+                        \  'path_html':'~/vimwiki/output_ex',
+                        \  'template_path': '~/vimwiki/_config/',
+                        \  'template_default': 'vimwiki',
+                        \  'template_ext': '.tpl',
                         \  'auto_export':0
-                        \}] 
+                        \}]
     inoremap $T %title   <esc>mAi<cr>%toc<esc>`A
 

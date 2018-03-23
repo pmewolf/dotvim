@@ -66,7 +66,7 @@ filetype plugin on
 filetype indent on
 
 " Set to auto read when a file is changed from the outside
-set autoread        
+set autoread
 
 " Change leader key
 let mapleader = ","
@@ -85,7 +85,7 @@ command! W w !sudo tee % > /dev/null
 set so=7
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -117,23 +117,23 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -155,7 +155,7 @@ set foldcolumn=1
 "   S1c Colors, Fonts and GUI
 " -------------------------------------
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -208,7 +208,7 @@ catch
 endtry
 
 " -------------------------------------
-"   S1e Text, tab and indent related 
+"   S1e Text, tab and indent related
 " -------------------------------------
 " Use spaces instead of tabs
 set expandtab
@@ -230,7 +230,7 @@ set si "Smart indent
 set nowrap
 
 " -------------------------------------
-"   S1f Visual mode related 
+"   S1f Visual mode related
 " -------------------------------------
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
@@ -267,7 +267,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>t<leader> :tabnext
 
 "map <C-i> :tabNext<cr>
 "map <C-o> :tabnext<cr>
@@ -286,7 +286,7 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
@@ -307,7 +307,7 @@ set laststatus=2
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l,%v,%p%%
 
 " -------------------------------------
-"   S1i Editing mappings 
+"   S1i Editing mappings
 " -------------------------------------
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -405,7 +405,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -461,7 +461,7 @@ au BufNewFile,BufRead *.py,*.pyw setf python
 if $VIM == 'C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\gVimPortable\App\vim'
     "au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python2761\App\python.exe %
     au FileType python nmap <F5> :! C:\Users\alfie.huang\OneDrive\Personal\Portable\PortableApps\Python3251\App\python.exe %
-else 
+else
     au FileType python nmap <F5> :! python3.3 %<CR>
 endif
 
@@ -478,7 +478,7 @@ au FileType javascript imap <c-a> alert();<esc>hi
 au FileType javascript inoremap <buffer> $r return 
 au FileType javascript inoremap <buffer> $f // --- PH<esc>FP2xi
 
-function! JavaScriptFold() 
+function! JavaScriptFold()
     setl foldmethod=syntax
     setl foldlevelstart=1
     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -503,16 +503,16 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " -------------------------------------
 "   S2d Shell section
 " -------------------------------------
-if exists('$TMUX') 
+if exists('$TMUX')
     if has('nvim')
         set termguicolors
     else
-        set term=screen-256color 
+        set term=screen-256color
     endif
 endif
 
 " -------------------------------------
-"   S2e Twig section 
+"   S2e Twig section
 " -------------------------------------
 autocmd BufRead *.twig set syntax=html filetype=html
 
@@ -587,7 +587,7 @@ cno $j e ./
 cno $c e <C-\>eCurrentFileDir("e")<cr>
 
 " $q is super useful when browsing on the command line
-" it deletes everything until the last slash 
+" it deletes everything until the last slash
 cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
@@ -755,7 +755,7 @@ xnoremap s <ESC>:%s/\%V
 
 set scrolloff=3      " 5 lines bevore and after the current line when scrolling
 set nu               " 
-set relativenumber   
+set relativenumber
 set isfname-=,       " make , is a delimiter (for gf option)
 set cursorline
 "set cc=81
@@ -922,45 +922,46 @@ endif
 "   S5d Other
 " -------------------------------------
 
-map gx :call HandleURL()<cr><cr>
-nmap <leader>g :call Google()<CR>
-
-function! HandleURL()
-    " open url under cursor
-    if has("win16") || has("win32") || has("win64")
-        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
-        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-    else
-        let browser = "firfox"
-    endif
-    let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-    echo s:uri
-    if s:uri != ""
-        "silent exec "!firefox '".s:uri."'"
-        "silent exec "!".browser." '".s:uri."'"
-        exec 'silent !"' . browser . '" ' . s:uri
-    else
-        echo "No URI found in line."
-    endif
-endfunction
-
-
-fun! Google()
-    " google keyword under cursor
-    if has("win16") || has("win32") || has("win64")
-        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
-        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-    else
-        let browser = "firfox"
-    endif
-    let keyword = expand("<cword>")
-    let url = "http://www.google.com/search?q=" . keyword
-    if has("win16") || has("win32") || has("win64")
-    else
-    endif
-    "exec 'silent !"' . path . 'firefox.exe" ' . url
-    exec 'silent !"' . browser . '" ' . url
-endfun
+"replace my open-browser.vim
+"map gx :call HandleURL()<cr><cr>
+"nmap <leader>g :call Google()<CR>
+"
+"function! HandleURL()
+"    " open url under cursor
+"    if has("win16") || has("win32") || has("win64")
+"        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
+"        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+"    else
+"        let browser = "firfox"
+"    endif
+"    let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+"    echo s:uri
+"    if s:uri != ""
+"        "silent exec "!firefox '".s:uri."'"
+"        "silent exec "!".browser." '".s:uri."'"
+"        exec 'silent !"' . browser . '" ' . s:uri
+"    else
+"        echo "No URI found in line."
+"    endif
+"endfunction
+"
+"
+"fun! Google()
+"    " google keyword under cursor
+"    if has("win16") || has("win32") || has("win64")
+"        "let browser = "C:/Program Files/Mozilla Firefox/firfox.exe"
+"        let browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+"    else
+"        let browser = "firfox"
+"    endif
+"    let keyword = expand("<cword>")
+"    let url = "http://www.google.com/search?q=" . keyword
+"    if has("win16") || has("win32") || has("win64")
+"    else
+"    endif
+"    "exec 'silent !"' . path . 'firefox.exe" ' . url
+"    exec 'silent !"' . browser . '" ' . url
+"endfun
 
 
 
@@ -968,12 +969,12 @@ endfun
 "   S8 Some Note
 " -------------------------------------
 
-" Change Letter Case 
+" Change Letter Case
 " ========================
 " Using virtual block choose range  then   (e.g.  "HellO" )
-"   g~  "hELLo" 
-"   gU  "HELLO"   
-"   gu  "hello"   
+"   g~  "hELLo"
+"   gU  "HELLO"
+"   gu  "hello"
 
 
 " Default Vim Useful Mapping
