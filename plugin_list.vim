@@ -1,13 +1,22 @@
+" -----------------------------------------------------------------------------
+"   plugin_list.vim
+"       https://github.com/pmewolf/dotvim
+"
+"   Contents
+"
+"
+" -----------------------------------------------------------------------------
+"
 "Plugin 'VundleVim/Vundle.vim'
 "    " Purpose:
 "    "   Vundle, the plug-in manager for Vim
 "    "   http://github.com/VundleVim/Vundle.Vim
 "    " Usage:
 "    " Config:
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -----------------------------------------------------------------------------
 " Vundle Example
 "   https://github.com/VundleVim/Vundle.vim/wiki/Examples
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -----------------------------------------------------------------------------
 "" plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 "
@@ -27,7 +36,7 @@
 "" Install L9 and avoid a Naming conflict if you've already installed a
 "" different version somewhere else.
 "Plugin 'ascenator/L9', {'name': 'newL9'}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -----------------------------------------------------------------------------
 
 Plugin 'tpope/vim-fugitive'
     " Purpose:

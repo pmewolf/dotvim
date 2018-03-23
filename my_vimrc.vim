@@ -1,4 +1,4 @@
-" ---------------------------------------------------------
+" -----------------------------------------------------------------------------
 "   my_vimrc.vim
 "       https://github.com/pmewolf/dotvim
 "
@@ -40,12 +40,11 @@
 "           S5d Other
 "       S8 Some Note
 "       S9 SandBox
-" ---------------------------------------------------------
+" -----------------------------------------------------------------------------
 
-
-" ---------------------------
+" -------------------------------------
 "   S1 Basic
-" ---------------------------
+" -------------------------------------
 if has("win16") || has("win32")
     behave mswin
     "let $dotvim="$VIM/../../Data/settings/dotvim"
@@ -56,9 +55,9 @@ endif
 behave xterm
 "behave mswin
 
-" ---------------------------
+" -------------------------------------
 "   S1a General
-" ---------------------------
+" -------------------------------------
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -79,9 +78,9 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
-" ---------------------------
+" -------------------------------------
 "   S1b VIM user interface
-" ---------------------------
+" -------------------------------------
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -152,9 +151,9 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" ---------------------------
+" -------------------------------------
 "   S1c Colors, Fonts and GUI
-" ---------------------------
+" -------------------------------------
 " Enable syntax highlighting
 syntax enable 
 
@@ -188,9 +187,9 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" ---------------------------
+" -------------------------------------
 "   S1d Files, backups and undo
-" ---------------------------
+" -------------------------------------
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 "set backup
@@ -208,9 +207,9 @@ endif
 catch
 endtry
 
-" ---------------------------
+" -------------------------------------
 "   S1e Text, tab and indent related 
-" ---------------------------
+" -------------------------------------
 " Use spaces instead of tabs
 set expandtab
 
@@ -230,17 +229,17 @@ set si "Smart indent
 "set wrap "Wrap lines
 set nowrap
 
-" ---------------------------
+" -------------------------------------
 "   S1f Visual mode related 
-" ---------------------------
+" -------------------------------------
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-" ---------------------------
+" -------------------------------------
 "   S1g Moving around, tabs, windows and buffers
-" ---------------------------
+" -------------------------------------
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <c-space> ?
@@ -297,9 +296,9 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" ---------------------------
+" -------------------------------------
 "   S1h Status line
-" ---------------------------
+" -------------------------------------
 " Always show the status line
 set laststatus=2
 
@@ -307,9 +306,9 @@ set laststatus=2
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l,%v,%p%%
 
-" ---------------------------
+" -------------------------------------
 "   S1i Editing mappings 
-" ---------------------------
+" -------------------------------------
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
@@ -343,9 +342,9 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
-" ---------------------------
+" -------------------------------------
 "   S1j Spell checking
-" ---------------------------
+" -------------------------------------
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -355,9 +354,9 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" ---------------------------
+" -------------------------------------
 "   S1k Misc
-" ---------------------------
+" -------------------------------------
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -370,9 +369,9 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-" ---------------------------
+" -------------------------------------
 "   S1l Helper functions
-" ---------------------------
+" -------------------------------------
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -425,13 +424,13 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-" ---------------------------
+" -------------------------------------
 "   S2 FileTypes
-" ---------------------------
+" -------------------------------------
 
-" ---------------------------
+" -------------------------------------
 "   S2a Python section
-" ---------------------------
+" -------------------------------------
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
 
@@ -466,9 +465,9 @@ else
     au FileType python nmap <F5> :! python3.3 %<CR>
 endif
 
-" ---------------------------
+" -------------------------------------
 "   S2b JavaScript section
-" ---------------------------
+" -------------------------------------
 au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
@@ -490,9 +489,9 @@ function! JavaScriptFold()
     setl foldtext=FoldText()
 endfunction
 
-" ---------------------------
+" -------------------------------------
 "   S2c CoffeeScript section
-" ---------------------------
+" -------------------------------------
 function! CoffeeScriptFold()
     setl foldmethod=indent
     setl foldlevelstart=1
@@ -501,9 +500,9 @@ au FileType coffee call CoffeeScriptFold()
 
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
-" ---------------------------
+" -------------------------------------
 "   S2d Shell section
-" ---------------------------
+" -------------------------------------
 if exists('$TMUX') 
     if has('nvim')
         set termguicolors
@@ -512,24 +511,24 @@ if exists('$TMUX')
     endif
 endif
 
-" ---------------------------
+" -------------------------------------
 "   S2e Twig section 
-" ---------------------------
+" -------------------------------------
 autocmd BufRead *.twig set syntax=html filetype=html
 
-" ---------------------------
+" -------------------------------------
 "   S2f Verilog/SystemVerilog section
-" ---------------------------
+" -------------------------------------
 " Parenthesis/bracket
 inoremap $B begin<esc>oend<esc>O
 
-" ---------------------------
+" -------------------------------------
 "   S3 Extended
-" ---------------------------
+" -------------------------------------
 
-" ---------------------------
+" -------------------------------------
 "   S3a GUI related
-" ---------------------------
+" -------------------------------------
 " Set font according to system
 if has("mac") || has("macunix")
     set gfn=Menlo:h15
@@ -557,16 +556,16 @@ set guioptions-=l
 set guioptions-=L
 
 
-" ---------------------------
+" -------------------------------------
 "   S3b Fast editing and reloading of vimrc configs
-" ---------------------------
+" -------------------------------------
 map <leader>e :e! ~/.vim_runtime/my_configs.vim<cr>
 autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_configs.vim
 
-" ---------------------------
+" -------------------------------------
 "   S3c Turn persistent undo on
 "     means that you can undo even when you close a buffer/VIM
-" ---------------------------
+" -------------------------------------
 set undofile
 
 try
@@ -578,9 +577,9 @@ endif
 catch
 endtry
 
-" ---------------------------
+" -------------------------------------
 "   S3d Command mode related
-" ---------------------------
+" -------------------------------------
 " Smart mappings on the command line
 cno $h e ~/
 "cno $d e ~/Desktop/
@@ -604,9 +603,9 @@ map ½ $
 cmap ½ $
 imap ½ $
 
-" ---------------------------
+" -------------------------------------
 "   S3e Parenthesis/bracket
-" ---------------------------
+" -------------------------------------
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
@@ -623,20 +622,20 @@ inoremap $q ''<esc>i
 inoremap $e ""<esc>i
 
 
-" ---------------------------
+" -------------------------------------
 "   S3f General abbreviations
-" ---------------------------
+" -------------------------------------
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
-" ---------------------------
+" -------------------------------------
 "   S3g Omni complete functions
-" ---------------------------
+" -------------------------------------
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-" ---------------------------
+" -------------------------------------
 "   S3h Ack searching and cope displaying
 "     requires ack.vim - it's much better than vimgrep/grep
-" ---------------------------
+" -------------------------------------
 " Use the the_silver_searcher if possible (much faster than Ack)
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
@@ -667,9 +666,9 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
-" ---------------------------
+" -------------------------------------
 "   S3i Helper functions
-" ---------------------------
+" -------------------------------------
 func! DeleteTillSlash()
     let g:cmd = getcmdline()
 
@@ -697,15 +696,15 @@ endfunc
 
 
 
-" ---------------------------
+" -------------------------------------
 "   S5 Self Setting
-" ---------------------------
+" -------------------------------------
 "set isfname-=:
 "set isfname-=:
 
-" ---------------------------
+" -------------------------------------
 "   S5a File I/O
-" ---------------------------
+" -------------------------------------
 
 "nnoremap gf :call GotoFile("new")<CR>
 "nnoremap gb :call GotoFile("")<CR>
@@ -742,17 +741,17 @@ nnoremap <C-a> :%y+ <CR>
     map <leader>so :source $dotvim/my_vimrc.vim<cr>
 "endif
 
-" ---------------------------
+" -------------------------------------
 "   S5b Search and replace
-" ---------------------------
+" -------------------------------------
 xnoremap / <ESC>/\%V
 xnoremap ? <ESC>/\%V<C-R>/
 " Visual Block replace
 xnoremap s <ESC>:%s/\%V
 
-" ---------------------------
+" -------------------------------------
 "   S5c Display and GUI
-" ---------------------------
+" -------------------------------------
 
 set scrolloff=3      " 5 lines bevore and after the current line when scrolling
 set nu               " 
@@ -919,9 +918,9 @@ if has("gui_running")
   autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
 endif
 
-" ---------------------------
+" -------------------------------------
 "   S5d Other
-" ---------------------------
+" -------------------------------------
 
 map gx :call HandleURL()<cr><cr>
 nmap <leader>g :call Google()<CR>
@@ -965,9 +964,9 @@ endfun
 
 
 
-" ---------------------------
+" -------------------------------------
 "   S8 Some Note
-" ---------------------------
+" -------------------------------------
 
 " Change Letter Case 
 " ========================
@@ -1059,9 +1058,9 @@ endfun
 
 
 
-" ---------------------------
+" -------------------------------------
 "   S9 SandBox
-" ---------------------------
+" -------------------------------------
 
 "let g:plantuml_executable_script='java -jar $VIMRUNTIME/../../../Data/settings/vimfiles/vimfiles/sources_self/vim-slumlord-master/plantuml.jar'
 "nnoremap <F6> :w<CR> :silent make<CR>
