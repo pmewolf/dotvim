@@ -318,7 +318,9 @@ Plugin 'vim-airline/vim-airline'
     " set status line
     set laststatus=2
     " enable powerline-fonts
-    "let g:airline_powerline_fonts = 1
+    if has("mac") || has("macunix")
+        let g:airline_powerline_fonts = 1
+    endif
     " set theme ref https://github.com/vim-airline/vim-airline/wiki/Screenshots
     let g:airline_theme='wombat'
     " enable tabline

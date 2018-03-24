@@ -162,16 +162,17 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+set background=dark
 try
+    "colorscheme solarized
+    "colorscheme peaksea
     "colorscheme peaksea
     "colorscheme ir_black
     "colorscheme desert
-    "colorscheme solarized
     colorscheme gruvbox
 catch
 endtry
 
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -182,7 +183,7 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -531,8 +532,10 @@ inoremap $B begin<esc>oend<esc>O
 " -------------------------------------
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=Menlo:h15
+    "set gfn=Menlo:h15
     "set gfn=IBM\ Plex\ Mono:h14,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
+    set gfn=Inconsolata\ for\ Powerline:h15
+    let g:Powerline_symbols = 'fancy'
 elseif has("win16") || has("win32")
     set gfn=Consolas:h12:cANSI
     "set gfn=Courier:h14:cANSI
@@ -762,11 +765,10 @@ set cursorline
 "let &colorcolumn="80,".join(range(120,999),",")
 let &colorcolumn="80,"."160"
 
-hi ColorColumn guibg=Black
-hi clear CursorLine
-hi CursorLine term=bold cterm=NONE ctermbg=darkblue guibg=Black
-hi ColorColumn term=bold cterm=NONE ctermbg=darkblue guibg=Black
-hi Search guibg=darkred
+"hi clear CursorLine
+hi CursorLine term=bold cterm=NONE ctermbg=Black guibg=Black
+hi ColorColumn term=bold cterm=NONE ctermbg=Black guibg=Black
+hi Search ctermbg=white ctermfg=darkgrey guibg=darkred
 "hi Search guifg=blue guibg=yellow
 "hi Search guibg=grey18
 
