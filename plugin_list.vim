@@ -3,8 +3,13 @@
 "       https://github.com/pmewolf/dotvim
 "
 "   Contents
-"
-"
+"       VIM_Enhancement
+"       ColorScheme
+"       Search
+"       IDE_Related
+"       SyntaxRelated
+"       Programming_Assist
+"       Utility
 " -----------------------------------------------------------------------------
 "
 "Plugin 'VundleVim/Vundle.vim'
@@ -62,22 +67,6 @@ Plugin 'tpope/vim-fugitive'
     " Config:
     "   Add %{fugitive#statusline()} to 'statusline' to get an indicator with the current branch in (surprise!) your statusline.
 
-Plugin 'ctrlpvim/ctrlp.vim'
-    " Purpose:
-    "   Active fork of kien/ctrlp.vim
-    "   Fuzzy file, buffer, mru, tag, etc finder.
-    "   http://ctrlpvim.github.io/ctrlp.vim/
-    "   #utility
-    " Usage:
-    " Config:
-    let g:ctrlp_working_path_mode = 0
-    
-    let g:ctrlp_map = '<c-f>'
-    map <leader>j :CtrlP<cr>
-    map <c-b> :CtrlPBuffer<cr>
-    
-    let g:ctrlp_max_height = 20
-    let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 Plugin 'michaeljsmith/vim-indent-object'
@@ -141,6 +130,7 @@ Plugin 'tpope/vim-repeat'
     "   #utility
     " Usage:
     " Config:
+
 Plugin 'tpope/vim-commentary'
     " Purpose:
     "   commentary.vim: comment stuff out
@@ -157,39 +147,7 @@ Plugin 'airblade/vim-gitgutter'
     " Config:
     let g:gitgutter_enabled=0
     nnoremap <silent> <leader>d :GitGutterToggle<cr>
-    
-Plugin 'itchyny/lightline.vim'
-    " Purpose:
-    "   A light and configurable statusline/tabline plugin for Vim
-    "   https://www.vim.org/scripts/script.php?script_id=5294
-    "   https://github.com/itchyny/lightline.vim
-    "   #utility
-    " Usage:
-    " Config:
-    "let g:lightline = {
-    "      \ 'colorscheme': 'wombat',
-    "      \ }
-    "
-    "let g:lightline = {
-    "      \ 'colorscheme': 'wombat',
-    "      \ 'active': {
-    "      \   'left': [ ['mode', 'paste'],
-    "      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-    "      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-    "      \ },
-    "      \ 'component': {
-    "      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-    "      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    "      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-    "      \ },
-    "      \ 'component_visible_condition': {
-    "      \   'readonly': '(&filetype!="help"&& &readonly)',
-    "      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-    "      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-    "      \ },
-    "      \ 'separator': { 'left': ' ', 'right': ' ' },
-    "      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-    "      \ }
+ 
 
 Plugin 'vim-scripts/mru.vim'
     " Purpose:
@@ -200,7 +158,7 @@ Plugin 'vim-scripts/mru.vim'
     let MRU_Max_Entries = 400
     map <leader>f :MRU<CR>
 
-"""
+
 "Plugin 'shemerey/vim-peepopen'
 "    " Purpose:
 "    "   A plugin for the Vim text editor. PeepOpen provides fuzzy search of
@@ -212,16 +170,6 @@ Plugin 'pmewolf/PeepOpen-EditorSupport', {'rtp': 'vim-peepopen/'}
     " Usage:
     " Config:
 
-" My plugin
-"Plugin 'tpope/tpope-vim-abolish'
-Plugin 'tpope/vim-abolish'
-    " Purpose:
-    "   abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
-    "   https://www.vim.org/scripts/script.php?script_id=1545
-    "   https://github.com/tpope/vim-abolish
-    "   #utility
-    " Usage:
-    " Config:
 
 Plugin 'vim-scripts/Conque-Shell'
     " Purpose:
@@ -234,20 +182,24 @@ Plugin 'vim-scripts/Conque-Shell'
 Plugin 'Yggdroot/indentLine'
     " Purpose:
     "   A vim plugin to display the indention levels with thin vertical lines
+    "   https://github.com/Yggdroot/indentLine
     " Usage:
     " Config:
-    " Vim
-    let g:indentLine_color_term = 239
-    " GVim
-    "let g:indentLine_color_gui = '#A4E57E'
+    "" highlight conceal color
+    "let g:indentLine_setColors = 0
+
+    "" customize conceal color
+    "    " Vim
+    "    let g:indentLine_color_term = 239
+    "    " GVim let g:indentLine_color_gui = '#A4E57E'
+    "    " none X terminal
+    "    let g:indentLine_color_tty_light = 7 " (default: 4)
+    "    let g:indentLine_color_dark = 1 " (default: 2)
+    "
+    "    " Background (Vim, GVim)
+    "    let g:indentLine_bgcolor_term = 202
+    "    let g:indentLine_bgcolor_gui = '#FF5F00'
     
-    " none X terminal
-    let g:indentLine_color_tty_light = 7 " (default: 4)
-    let g:indentLine_color_dark = 1 " (default: 2)
-    
-    " Background (Vim, GVim)
-    let g:indentLine_bgcolor_term = 202
-    let g:indentLine_bgcolor_gui = '#FF5F00'
     if !has("gui_running")
         let g:indentLine_char = '|'
     endif
@@ -321,8 +273,6 @@ Plugin 'vim-airline/vim-airline'
     if has("mac") || has("macunix")
         let g:airline_powerline_fonts = 1
     endif
-    " set theme ref https://github.com/vim-airline/vim-airline/wiki/Screenshots
-    let g:airline_theme='wombat'
     " enable tabline
     let g:airline#extensions#tabline#enabled = 1
     " set left separator
@@ -334,15 +284,47 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
     " Purpose:
     "   A collection of themes for vim-airline
-
-
-Plugin 'othree/xml.vim'
-    " Purpose:
-    "   helps editing xml (and [x]html, sgml, xslt) files
-    "   https://www.vim.org/scripts/script.php?script_id=1397
-    "   #ftplugin #xml
     " Usage:
     " Config:
+    " set theme ref https://github.com/vim-airline/vim-airline/wiki/Screenshots
+    "let g:airline_theme='badwolf'
+    let g:airline_theme='powerlineish'
+    "let g:airline_theme='solarized'
+    "let g:airline_solarized_bg='dark'
+    
+" use airline instead
+"Plugin 'itchyny/lightline.vim'
+    " Purpose:
+    "   A light and configurable statusline/tabline plugin for Vim
+    "   https://www.vim.org/scripts/script.php?script_id=5294
+    "   https://github.com/itchyny/lightline.vim
+    "   #utility
+    " Usage:
+    " Config:
+    "let g:lightline = {
+    "      \ 'colorscheme': 'wombat',
+    "      \ }
+    "
+    "let g:lightline = {
+    "      \ 'colorscheme': 'wombat',
+    "      \ 'active': {
+    "      \   'left': [ ['mode', 'paste'],
+    "      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+    "      \   'right': [ [ 'lineinfo' ], ['percent'] ]
+    "      \ },
+    "      \ 'component': {
+    "      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+    "      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+    "      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+    "      \ },
+    "      \ 'component_visible_condition': {
+    "      \   'readonly': '(&filetype!="help"&& &readonly)',
+    "      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    "      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+    "      \ },
+    "      \ 'separator': { 'left': ' ', 'right': ' ' },
+    "      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+    "      \ }
 
 "vundle install error
 "Plugin 'othree/vim-slumlord'
@@ -351,7 +333,7 @@ Plugin 'othree/xml.vim'
 "    " Config:
 
 " -------------------------------------
-" VIM Enhancement
+" * VIM_Enhancement
 " -------------------------------------
 Plugin 'maxbrunsfeld/vim-yankstack'
     " Purpose:
@@ -419,7 +401,7 @@ Plugin 'vim-scripts/open-browser.vim'
     vmap gx <Plug>(openbrowser-smart-search)
     
 " -------------------------------------
-" ColorScheme
+" * ColorScheme
 " -------------------------------------
 Plugin 'twerth/ir_black'
     " Purpose:
@@ -452,7 +434,7 @@ Plugin 'morhetz/gruvbox'
     "   https://github.com/morhetz/gruvbox
 
 " -------------------------------------
-" Search
+" * Search
 " -------------------------------------
 Plugin 'mileszs/ack.vim'
     " Purpose:
@@ -460,9 +442,9 @@ Plugin 'mileszs/ack.vim'
     " Usage:
     "   :help Ack
     "   :Ack [options] {pattern} [{directories}]
-    "   
+    "
     "   The quickfix results window is augmented with these convenience mappings:
-    "   
+    "
     "   ?    a quick summary of these keys, repeat to close
     "   o    to open (same as Enter)
     "   O    to open and close the quickfix window
@@ -476,8 +458,34 @@ Plugin 'mileszs/ack.vim'
     "   q    to close the quickfix window
     " Config:
 
+Plugin 'ctrlpvim/ctrlp.vim'
+    " Purpose:
+    "   Active fork of kien/ctrlp.vim
+    "   Fuzzy file, buffer, mru, tag, etc finder.
+    "   http://ctrlpvim.github.io/ctrlp.vim/
+    "   #utility
+    " Usage:
+    " Config:
+    let g:ctrlp_working_path_mode = 0
+    
+    let g:ctrlp_map = '<c-f>'
+    map <leader>j :CtrlP<cr>
+    map <c-b> :CtrlPBuffer<cr>
+    
+    let g:ctrlp_max_height = 20
+    let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+
+Plugin 'tpope/vim-abolish'
+    " Purpose:
+    "   abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
+    "   https://www.vim.org/scripts/script.php?script_id=1545
+    "   https://github.com/tpope/vim-abolish
+    "   #utility
+    " Usage:
+    " Config:
+
 " -------------------------------------
-" IDE related
+" * IDE_Related
 " -------------------------------------
 Plugin 'xolox/vim-shell'
     " Purpose:
@@ -653,7 +661,7 @@ Plugin 'vim-scripts/winmanager'
 
 
 " -------------------------------------
-" SyntaxRelated
+" * SyntaxRelated
 " -------------------------------------
 "Plugin 'chr4/nginx.vim'
 "    " Purpose:
@@ -682,6 +690,14 @@ Plugin 'vim-scripts/winmanager'
 "    "   possibly other plugins that place code in after/syntax/css.vim or
 "    "   after/syntax/css/*.vim.
 "    "   #syntax #less #css
+"    " Usage:
+"    " Config:
+
+"Plugin 'othree/xml.vim'
+"    " Purpose:
+"    "   helps editing xml (and [x]html, sgml, xslt) files
+"    "   https://www.vim.org/scripts/script.php?script_id=1397
+"    "   #ftplugin #xml
 "    " Usage:
 "    " Config:
 
@@ -718,7 +734,7 @@ Plugin 'digitaltoad/vim-pug'
     " Config:
 
 " -------------------------------------
-" Programming Assist
+" * Programming_Assist
 " -------------------------------------
 
 " Auto Complete
@@ -922,7 +938,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 
 
 " -------------------------------------
-" Utility
+" * Utility
 " -------------------------------------
 Plugin 'itchyny/calendar.vim'
     " Purpose:
