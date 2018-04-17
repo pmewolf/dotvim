@@ -777,6 +777,10 @@ set foldmethod=syntax
 set foldcolumn=1
 set foldlevelstart=20
 
+"Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 "set foldclose
 if has("gui_gtk2") && has("gui_running")
     set lines=50 columns=200
