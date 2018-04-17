@@ -399,7 +399,13 @@ Plugin 'vim-scripts/open-browser.vim'
     " If it looks like URI, Open [selected] URI under cursor. Otherwise, Search word under cursor.
     nmap gx <Plug>(openbrowser-smart-search)
     vmap gx <Plug>(openbrowser-smart-search)
-    
+
+Plugin 'vim-scripts/LargeFile'
+    " Purpose:
+    " Usage:
+    " Config:
+
+
 " -------------------------------------
 " * ColorScheme
 " -------------------------------------
