@@ -13,11 +13,15 @@
 " -----------------------------------------------------------------------------
 "
 "Plugin 'VundleVim/Vundle.vim'
-"    " Purpose:
-"    "   Vundle, the plug-in manager for Vim
-"    "   http://github.com/VundleVim/Vundle.Vim
-"    " Usage:
-"    " Config:
+    " Purpose:
+    "   Vundle, the plug-in manager for Vim
+    "   http://github.com/VundleVim/Vundle.Vim
+    " Usage:
+    "   :PluginInstall
+    "   :PluginUpate
+    "   :PluginClean
+    "   :PluginList
+    " Config:
 " -----------------------------------------------------------------------------
 " Vundle Example
 "   https://github.com/VundleVim/Vundle.vim/wiki/Examples
@@ -118,8 +122,10 @@ Plugin 'junegunn/goyo.vim'
 
 Plugin 'amix/vim-zenroom2'
     " Purpose:
-    "   A Vim extension that emulates iA Writer environment when editing Markdown, reStructuredText or text files
-    "   It requires goyo.vim and it works by setting global Goyo callbacks that triggers special setup for Markdown, reStructuredText and text files.
+    "   A Vim extension that emulates iA Writer environment when editing
+    "   Markdown, reStructuredText or text files
+    "   It requires goyo.vim and it works by setting global Goyo callbacks that
+    "   triggers special setup for Markdown, reStructuredText and text files.
     " Usage:
     " Config:
 
@@ -141,7 +147,8 @@ Plugin 'tpope/vim-commentary'
     
 Plugin 'airblade/vim-gitgutter'
     " Purpose:
-    "   A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+    "   A Vim plugin which shows a git diff in the gutter (sign column) and
+    "   stages/undoes hunks.
     "   https://github.com/airblade/vim-gitgutter
     " Usage:
     " Config:
@@ -257,7 +264,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'powerline/powerline'
     " Purpose:
     "   Powerline is a statusline plugin for vim, and provides statuslines and
-    "   prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.
+    "   prompts for several other applications, including zsh, bash, tmux,
+    "   IPython, Awesome and Qtile.
     "   https://powerline.readthedocs.io/en/latest/
     " Usage:
     " Config:
@@ -281,6 +289,8 @@ Plugin 'vim-airline/vim-airline'
     let g:airline#extensions#tabline#left_alt_sep = '|'
     " show buffer number
     let g:airline#extensions#tabline#buffer_nr_show = 1
+    "
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
 Plugin 'vim-airline/vim-airline-themes'
     " Purpose:
     "   A collection of themes for vim-airline
@@ -595,13 +605,13 @@ Plugin 'wolfpython/cscope_map.vim'
     "   <CTRL-\>e  # egrep:     egrep search for the word under cursor
     "   <CTRL-\>f  # file:      open the filename under cursor
     "   <CTRL-\>i  # includes:  find files that include the filename under cursor
-    "   <CRTL-\>d  # called:    find functions that function under cursor calls    
+    "   <CRTL-\>d  # called:    find functions that function under cursor calls
     " Config:
     set cscopetag
     set csto=0
     
     "if filereadable("cscope.out")
-    "   cs add cscope.out   
+    "   cs add cscope.out
     "elseif $CSCOPE_DB != ""
     "    cs add $CSCOPE_DB
     "endif
@@ -626,17 +636,17 @@ Plugin 'wolfpython/cscope_map.vim'
 
 
 "Plugin 'corntrace/bufexplorer'
-Plugin 'jlanzarotta/bufexplorer'
-    " Purpose:
-    "   BufExplorer Plugin for Vim
-    "   #utility
-    " Usage:
-    " Config:
-    let g:bufExplorerDefaultHelp=0
-    let g:bufExplorerShowRelativePath=1
-    let g:bufExplorerFindActive=1
-    let g:bufExplorerSortBy='name'
-    map <leader>o :BufExplorer<cr>
+"Plugin 'jlanzarotta/bufexplorer'
+"    " Purpose:
+"    "   BufExplorer Plugin for Vim
+"    "   #utility
+"    " Usage:
+"    " Config:
+"    let g:bufExplorerDefaultHelp=0
+"    let g:bufExplorerShowRelativePath=1
+"    let g:bufExplorerFindActive=1
+"    let g:bufExplorerSortBy='name'
+"    map <leader>o :BufExplorer<cr>
 
 Plugin 'vim-scripts/winmanager'
     " Purpose:
@@ -761,6 +771,8 @@ Plugin 'othree/vim-autocomplpop'
     "   https://github.com/othree/vim-autocomplpop
     " Usage:
     " Config:
+    " enable auto-popup for this completion
+    let g:acp_behaviorSnipmateLength = 1
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
     " Purpose:
@@ -811,6 +823,9 @@ Plugin 'vim-syntastic/syntastic'
     "   https://github.com/vim-syntastic/syntastic
     " Usage:
     " Config:
+
+    "let g:syntasic_check_on_open = 1
+
     " Python
     let g:syntastic_python_checkers=['pyflakes']
     
@@ -829,7 +844,6 @@ Plugin 'vim-syntastic/syntastic'
         execute "Errors"
     endfunc
     nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
-    let g:syntasic_check_on_open = 1
 
 Plugin 'vhda/verilog_systemverilog.vim'
     " Purpose:
@@ -837,28 +851,14 @@ Plugin 'vhda/verilog_systemverilog.vim'
     "   https://github.com/vhda/verilog_systemverilog.vim
     " Usage:
     " Config:
-    "if has("win16") || has("win32")
-    "    augroup syntax
-    "    au BufNewFile,BufReadPost *.v*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-    "    au BufNewFile,BufReadPost *.sv*     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-    "    au BufNewFile,BufReadPost *.h*      so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-    "    au BufNewFile,BufReadPost *.log     so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim
-    "    augroup END
-    "    nmap sv :so $VIMRUNTIME\..\..\..\data\settings\vimfiles\sources_self\verilog_systemverilog\syntax\verilog_systemverilog.vim<CR>
-    "else
         augroup syntax
         au BufNewFile,BufReadPost *.v*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.sv*     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.h*      so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         au BufNewFile,BufReadPost *.log     so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
+        au BufNewFile,BufReadPost *.task    so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
         augroup END
-        nmap sv :so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim<CR>
-    "endif
-
-    augroup syntax
-    "au BufNewFile,BufReadPost *.sv* so $VIMRUNTIME/../../../Data/settings/vimfiles/syntax/systemverilog.vim
-    au BufNewFile,BufReadPost *.sv* so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim
-    augroup END
+    nmap sv :so $dotvim/bundle/verilog_systemverilog.vim/syntax/verilog_systemverilog.vim<CR>
 
     
 Plugin 'plasticboy/vim-markdown'
@@ -889,9 +889,15 @@ Plugin 'nvie/vim-flake8'
     " Purpose:
     "   Flake8 plugin for Vim
     "   https://github.com/nvie/vim-flake8
+    "   vim-flake8 is a Vim plugin that runs the currently open file through
+    "   Flake8, a static syntax and style checker for Python source code. It
+    "   supersedes both vim-pyflakes and vim-pep8.
     "   #utility #python #flake8
     " Usage:
+    "   1. Open a Python file
+    "   2. Press <F7> to run flake8 on it
     " Config:
+    "autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
 
 Plugin 'vim-scripts/Pydiction'
     " Purpose:
