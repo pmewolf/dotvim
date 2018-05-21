@@ -434,20 +434,96 @@ Plugin 'vim-scripts/mayansmoke'
     "   Pleasant and ergonomic light-background color scheme.
     "   https://www.vim.org/scripts/script.php?script_id=3065
 
-Plugin 'altercation/vim-colors-solarized'
-    " Purpose:
-    "   precision colorscheme for the vim text editor
-    "   http://ethanschoonover.com/solarized
-    
-Plugin 'therubymug/vim-pyte'
-    " Purpose:
-    "   Henning Hasemann's pyte vim theme packaged to work with Tim Pope's pathogen plugin.
-    "   https://www.vim.org/scripts/script.php?script_id=1492
+"Plugin 'altercation/vim-colors-solarized'
+"    " Purpose:
+"    "   precision colorscheme for the vim text editor
+"    "   http://ethanschoonover.com/solarized
+"
+"Plugin 'therubymug/vim-pyte'
+"    " Purpose:
+"    "   Henning Hasemann's pyte vim theme packaged to work with Tim Pope's pathogen plugin.
+"    "   https://www.vim.org/scripts/script.php?script_id=1492
+"
+"Plugin 'morhetz/gruvbox'
+"    " Purpose:
+"    "   Retro groove color scheme for Vim
+"    "   https://github.com/morhetz/gruvbox
 
-Plugin 'morhetz/gruvbox'
+Plugin 'chriskempson/base16-vim'
     " Purpose:
-    "   Retro groove color scheme for Vim
-    "   https://github.com/morhetz/gruvbox
+    "   Base16 for Vim https://github.com/chriskempson/base16
+    "   https://github.com/chriskempson/base16-vim
+
+Plugin 'rafi/awesome-vim-colorschemes'
+    " Purpose:
+    "   Collection of awesome color schemes for Neo/vim, merged for quick use.
+    "   https://github.com/rafi/awesome-vim-colorschemes
+    "   Scheme          Description                                             Term    GUI
+    "   256noir         Dark minimal colors, to avoid distraction               v       v
+    "   Abstract        Dark theme based on Abstract app                        v       v
+    "   Afterglow       Adaptation from Sublime Text                            v       v
+    "   Alduin          Dark rustic colors                                      v       v
+    "   Anderson        Dark vim colorscheme based on colors from Wes Anderson films
+    "                                                                           v       v
+    "   Angr            Pleasant, mild, dark theme                              v       v
+    "   Apprentice      Dark, low-contrast colorscheme                          v       v
+    "   Archery         Vim colorscheme inspired by Arch Linux colors           v       v
+    "   Atom            Designed to be very readable in both light and dark environments
+    "                                                                                   v
+    "   Carbonized      Inspired by the Carbon keycap set                       v (16)  v
+    "   Challenger-deep FlatColor colorscheme                                   v       v
+    "   Deep-space      Intergalactic friendly color scheme based off Hybrid    v       v
+    "   Deus            For the late night coder                                v       v
+    "   Dracula         Dark theme                                              v       v
+    "   Focuspoint      Maintain color coordination and important keyword focus         v
+    "   Flattened       Solarized, without the bullshit                         v (16)  v
+    "   Github          Based on Github's syntax highlighting                   v       v
+    "   Gotham          Very dark vim colorscheme                               v       v
+    "   Gruvbox         Retro groove color scheme                               v       v
+    "   Happy hacking   Fairly small set of colors instead of throwing rainbows at your face
+    "                                                                           v       v
+    "   Iceberg         Dark blue color scheme                                  v       v
+    "   Papercolor      Light and Dark color schemes inspired by Google's Material Design
+    "                                                                           v       v
+    "   Parsec          Color scheme for people tired of solarized              v (16)  v
+    "   Scheakur        A light/dark colorscheme                                v       v
+    "   Hybrid          A dark colour scheme for Vim and gVim                   v       v
+    "   Hybrid-material Material color scheme based on w0ng/vim-hybrid          v       v
+    "   Jellybeans      Colorful, dark color scheme                             v       v
+    "   Lightning       Light vim colorscheme based on Apprentice               v       v
+    "   Lucid           Vivid highlights and friendly, clear colors                     v
+    "   Lucius          Lucius color scheme                                     v       v
+    "   Materialbox     Light and dark material palette inspired based on Gruvbox       v
+    "   Meta5           Dark colorscheme, inspired by Tron                      v       v
+    "   Minimalist      Darker version of material theme inspired by Sublime Text
+    "                                                                           v       v
+    "   Molokai         Molokai color scheme                                    v       v
+    "   Molokayo        Very tweaked molokai based theme                        v       v
+    "   Nord            An arctic, north-bluish clean and elegant theme         v (16)  v
+    "   Oceanicnext     Oceanic Next theme                                      v       v
+    "   One             Adaptation of one-light and one-dark                    v       v
+    "   Onedark         Inspired by Atom's One Dark syntax theme                v       v
+    "   Orbital         Dark blue base16 theme                                  v       v
+    "   Paramount       Minimal colorscheme that only puts emphasis on the paramount
+    "                                                                           v       v
+    "   Pink-moon       Dark pastel theme                                       v       v
+    "   Pyte            Clean, light (nearly white) theme                               v
+    "   Rakr            Flat colorscheme light and dark variant                 v       v
+    "   Rdark-terminal2 Modified rdark-terminal to enhance visibility           v
+    "   Seoul256        Low-contrast color scheme based on Seoul Colors         v       v
+    "   Sierra          Dark vintage colors                                     v       v
+    "   Solarized8      Optimized Solarized colorschemes                        v (16)  v
+    "   Space-vim-dark  Dark magenta colors                                     v       v
+    "   Tender          24bit colorscheme for Vim                               v       v
+    "   Termschool      Based on the "codeschool" theme, with lots of tweaks    v       v
+    "   Twilight256     Imitates the Twilight theme for TextMate                v       v
+    "   Two-firewatch   A blend between duotone light and firewatch (for atom)  v       v
+    "   Wombat256       Wombat for 256 color xterms                             v       v
+
+Plugin 'sjl/badwolf'
+    " Purpose:
+    "   A Vim color scheme. http://stevelosh.com/projects/badwolf/
+    "   https://github.com/sjl/badwolf
 
 " -------------------------------------
 " * Search
