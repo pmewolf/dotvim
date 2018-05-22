@@ -164,66 +164,7 @@ endif
 
 set background=dark
 try
-    "colorscheme 256noir
-    "colorscheme abstract
-    "colorscheme afterglow
-    "colorscheme alduin
-    "colorscheme anderson
-    "colorscheme angr
-    "colorscheme apprentice
-    "colorscheme archery
-    "colorscheme atom
-    colorscheme badwolf
-    "colorscheme carbonized
-    "colorscheme challenger-deep
-    "colorscheme deep-space
-    "colorscheme desert
-    "colorscheme deus
-    "colorscheme dracula
-    "colorscheme flattened
-    "colorscheme focuspoint
-    "colorscheme github
-    "colorscheme gotham
-    "colorscheme gruvbox
-    "colorscheme happyhacking
-    "colorscheme hybrid
-    "colorscheme hybrid-material
-    "colorscheme iceberg
-    "colorscheme ir_black
-    "colorscheme jellybeans
-    "colorscheme lightning
-    "colorscheme lucid
-    "colorscheme lucius
-    "colorscheme materialbox
-    "colorscheme mayansmoke
-    "colorscheme meta5
-    "colorscheme minimalist
-    "colorscheme molokai
-    "colorscheme molokayo
-    "colorscheme nord
-    "colorscheme oceanicnext
-    "colorscheme one
-    "colorscheme onedark
-    "colorscheme orbital
-    "colorscheme papercolor
-    "colorscheme paramount
-    "colorscheme parsec
-    "colorscheme peaksea
-    "colorscheme pink-moon
-    "colorscheme pyte
-    "colorscheme rakr
-    "colorscheme rdark-terminal2
-    "colorscheme scheakur
-    "colorscheme seoul256
-    "colorscheme sierra
-    "colorscheme solarized
-    "colorscheme solarized8
-    "colorscheme space-vim-dark
-    "colorscheme tender
-    "colorscheme termschool
-    "colorscheme twilight256
-    "colorscheme two-firewatch
-    "colorscheme wombat256
+    source local_scheme.vim
 catch
 endtry
 
