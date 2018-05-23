@@ -53,23 +53,42 @@ Plugin 'tpope/vim-fugitive'
     "   https://www.vim.org/scripts/script.php?script_id=2975
     "   #utility #git
     " Usage:
-    "   :Gdiff      to bring up the staged version of the file side by side with the working tree version and
-    "               use Vim's diff handling capabilities to stage a subset of the file's changes.
-    "   :Gstatus    Press `-` to add/reset a file's changes, or `p` to add/reset --patch
-    "   :Gblame     brings up an interactive vertical split with git-blame output.
-    "               Press enter on a line to reblame the file as it stood in that commit, or`o` to open that commit in a split.
-    "   :Gmove      does a git-mv on a file and simultaneously renames the buffer.
-    "   :Gremove    does a git-rm on a file and simultaneously deletes the buffer.
-    "   :Ggrep      to search the work tree (or any arbitrary commit) with git-grep, skipping over that which is not tracked in the repository.
-    "   :Glog       loads all previous revisions of a file into the quickfix list so you can iterate over them and watch the file evolve!
-    "   :Gread      is a variant of `git checkout -- filename` that operates on the buffer rather than the filename.
-    "               This means you can use `u` to undo it and you never get any warnings about the file changing outside Vim.
-    "   :Gwrite     writes to both the work tree and index versions of a file,
-    "               making it like git-add when called from a work tree file and like git-checkout when called from the index or a blob in history.
-    "   :Git        for running any arbitrary command.
+    "   :Gdiff
+    "       to bring up the staged version of the file side by side with the
+    "       working tree version and use Vim's diff handling capabilities to
+    "       stage a subset of the file's changes.
+    "   :Gstatus
+    "       Press `-` to add/reset a file's changes, or `p` to add/reset
+    "       --patch
+    "   :Gblame
+    "       brings up an interactive vertical split with git-blame output.
+    "       Press enter on a line to reblame the file as it stood in that
+    "       commit, or`o` to open that commit in a split.
+    "   :Gmove
+    "       does a git-mv on a file and simultaneously renames the buffer.
+    "   :Gremove
+    "       does a git-rm on a file and simultaneously deletes the buffer.
+    "   :Ggrep
+    "       to search the work tree (or any arbitrary commit) with git-grep,
+    "       skipping over that which is not tracked in the repository.
+    "   :Glog
+    "       loads all previous revisions of a file into the quickfix list so
+    "       you can iterate over them and watch the file evolve!
+    "   :Gread
+    "       is a variant of `git checkout -- filename` that operates on the
+    "       buffer rather than the filename.
+    "       This means you can use `u` to undo it and you never get any
+    "       warnings about the file changing outside Vim.
+    "   :Gwrite
+    "       writes to both the work tree and index versions of a file, making
+    "       it like git-add when called from a work tree file and like
+    "       git-checkout when called from the index or a blob in history.
+    "   :Git
+    "       for running any arbitrary command.
     "
     " Config:
-    "   Add %{fugitive#statusline()} to 'statusline' to get an indicator with the current branch in (surprise!) your statusline.
+    "   Add %{fugitive#statusline()} to 'statusline' to get an indicator with
+    "   the current branch in (surprise!) your statusline.
 
 
 
@@ -406,7 +425,8 @@ Plugin 'vim-scripts/open-browser.vim'
     "nmap gx <Plug>(openbrowser-search)
     "vmap gx <Plug>(openbrowser-search)
     
-    " If it looks like URI, Open [selected] URI under cursor. Otherwise, Search word under cursor.
+    " If it looks like URI, Open [selected] URI under cursor.
+    " Otherwise, Search word under cursor.
     nmap gx <Plug>(openbrowser-smart-search)
     vmap gx <Plug>(openbrowser-smart-search)
 
@@ -438,11 +458,6 @@ Plugin 'vim-scripts/mayansmoke'
 "    " Purpose:
 "    "   precision colorscheme for the vim text editor
 "    "   http://ethanschoonover.com/solarized
-"
-"Plugin 'therubymug/vim-pyte'
-"    " Purpose:
-"    "   Henning Hasemann's pyte vim theme packaged to work with Tim Pope's pathogen plugin.
-"    "   https://www.vim.org/scripts/script.php?script_id=1492
 "
 "Plugin 'morhetz/gruvbox'
 "    " Purpose:
@@ -866,7 +881,8 @@ Plugin 'tomtom/tlib_vim'
 
 Plugin 'garbas/vim-snipmate'
     " Purpose:
-    "   snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
+    "   snipMate.vim aims to be a concise vim script that implements some of
+    "   TextMate's snippets features in Vim.
     "   https://www.vim.org/scripts/script.php?script_id=2540
     " Usage:
     " Config:

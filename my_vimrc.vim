@@ -164,7 +164,7 @@ endif
 
 set background=dark
 try
-    source local_scheme.vim
+    source $dotvim/local_scheme.vim
 catch
 endtry
 
@@ -206,20 +206,20 @@ endtry
 " file is large from 10mb
 let g:LargeFile = 1024 * 1024 * 10
 augroup LargeFile
- autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+    autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
 augroup END
 
 function LargeFile()
- " no syntax highlighting etc
- set eventignore+=FileType
- " save memory when other file is viewed
- setlocal bufhidden=unload
- " is read-only (write with :w new_filename)
- setlocal buftype=nowrite
- " no undo possible
- setlocal undolevels=-1
- " display message
- autocmd VimEnter *  echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed (see .vimrc for details)."
+    " no syntax highlighting etc
+    set eventignore+=FileType
+    " save memory when other file is viewed
+    setlocal bufhidden=unload
+    " is read-only (write with :w new_filename)
+    setlocal buftype=nowrite
+    " no undo possible
+    setlocal undolevels=-1
+    " display message
+    autocmd VimEnter *  echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed (see .vimrc for details)."
 endfunction
 
 " -------------------------------------
@@ -701,7 +701,7 @@ func! DeleteTillSlash()
         else
             let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
         endif
-    endif   
+    endif
 
     return g:cmd_edited
 endfunc
@@ -727,7 +727,7 @@ endfunc
 "nnoremap gb :call GotoFile("")<CR>
 
 "open in a new tab
-nnoremap gt <C-W>gf<CR>     
+nnoremap gt <C-W>gf<CR>
 "open in a sp win
 nnoremap gf <C-W>F<CR>
 "nnoremap gg <C-W>F<CR>
@@ -771,7 +771,7 @@ xnoremap s <ESC>:%s/\%V
 " -------------------------------------
 
 set scrolloff=3      " 5 lines bevore and after the current line when scrolling
-set nu               " 
+set nu               "
 set relativenumber
 set isfname-=,       " make , is a delimiter (for gf option)
 set cursorline
@@ -1078,7 +1078,6 @@ endif
 
 
 
-
 " -------------------------------------
 "   S9 SandBox
 " -------------------------------------
@@ -1101,8 +1100,6 @@ endif
 " 1_$_a
 " 12_$_a
 " 123_$_a
-
-
 
 
 

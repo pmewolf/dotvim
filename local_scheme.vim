@@ -7,7 +7,7 @@
 "colorscheme apprentice
 "colorscheme archery
 "colorscheme atom
-"colorscheme badwolf
+colorscheme badwolf
 "colorscheme carbonized
 "colorscheme challenger-deep
 "colorscheme deep-space
@@ -24,7 +24,7 @@
 "colorscheme hybrid-material
 "colorscheme iceberg
 "colorscheme ir_black
-colorscheme jellybeans
+"colorscheme jellybeans
 "colorscheme lightning
 "colorscheme lucid
 "colorscheme lucius
