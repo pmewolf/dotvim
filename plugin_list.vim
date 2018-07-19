@@ -464,10 +464,10 @@ Plugin 'vim-scripts/mayansmoke'
 "    "   Retro groove color scheme for Vim
 "    "   https://github.com/morhetz/gruvbox
 
-Plugin 'chriskempson/base16-vim'
-    " Purpose:
-    "   Base16 for Vim https://github.com/chriskempson/base16
-    "   https://github.com/chriskempson/base16-vim
+"Plugin 'chriskempson/base16-vim'
+"    " Purpose:
+"    "   Base16 for Vim https://github.com/chriskempson/base16
+"    "   https://github.com/chriskempson/base16-vim
 
 Plugin 'rafi/awesome-vim-colorschemes'
     " Purpose:

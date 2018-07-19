@@ -7,7 +7,7 @@
 "colorscheme apprentice
 "colorscheme archery
 "colorscheme atom
-colorscheme badwolf
+"colorscheme badwolf
 "colorscheme carbonized
 "colorscheme challenger-deep
 "colorscheme deep-space
@@ -19,7 +19,7 @@ colorscheme badwolf
 "colorscheme github
 "colorscheme gotham
 "colorscheme gruvbox
-"colorscheme happyhacking
+colorscheme happyhacking
 "colorscheme hybrid
 "colorscheme hybrid-material
 "colorscheme iceberg
