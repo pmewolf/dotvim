@@ -17,9 +17,10 @@
 "colorscheme flattened
 "colorscheme focuspoint
 "colorscheme github
+"colorscheme goodwolf
 "colorscheme gotham
 "colorscheme gruvbox
-colorscheme happyhacking
+"colorscheme happy_hacking
 "colorscheme hybrid
 "colorscheme hybrid-material
 "colorscheme iceberg
@@ -41,7 +42,7 @@ colorscheme happyhacking
 "colorscheme orbital
 "colorscheme papercolor
 "colorscheme paramount
-"colorscheme parsec
+colorscheme parsec
 "colorscheme peaksea
 "colorscheme pink-moon
 "colorscheme pyte

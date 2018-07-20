@@ -439,6 +439,17 @@ Plugin 'vim-scripts/LargeFile'
 " -------------------------------------
 " * ColorScheme
 " -------------------------------------
+Plugin 'xolox/vim-colorscheme-switcher'
+    " Purpose:
+    "   https://github.com/xolox/vim-colorscheme-switcher
+    " Usage:
+    " Config:
+    "   :NextColorScheme
+    "   :PrevColorScheme
+    "   :RandomColorScheme
+    let g:colorscheme_switcher_define_mappings = 0
+    "let g:colorscheme_switcher_exclude = ['default', 'test']
+
 Plugin 'twerth/ir_black'
     " Purpose:
     "   The original IR_Black color scheme for vim http://blog.toddwerth.com/entries/8
