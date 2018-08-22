@@ -1109,3 +1109,10 @@ Plugin 'vimwiki/vimwiki'
                         \}]
     inoremap $T %title   <esc>mAi<cr>%toc<esc>`A
 
+    
+Plugin 'jceb/vim-orgmode'
+    " Purpose:
+    "   Text outlining and task management for Vim based on Emacs' Org-Mode
+    "   https://github.com/jceb/vim-orgmode
+    " Usage:
+    " Config:
