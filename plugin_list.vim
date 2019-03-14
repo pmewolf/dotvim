@@ -356,10 +356,10 @@ Plugin 'vim-airline/vim-airline-themes'
     "      \ }
 
 "vundle install error
-"Plugin 'othree/vim-slumlord'
-"    " Purpose:
-"    " Usage:
-"    " Config:
+Plugin 'scrooloose/vim-slumlord'
+    " Purpose:
+    " Usage:
+    " Config:
 
 " -------------------------------------
 " * VIM_Enhancement
